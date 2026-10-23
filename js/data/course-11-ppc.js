@@ -1,0 +1,127 @@
+(function () {
+  var h = QF.h, L = h.L, S = h.S, Q = h.Q;
+  QF.addCourse({
+    slug: 'advanced-ppc', title: 'Advanced PPC Strategy', subtitle: 'Bidding strategies, Performance Max, ad testing, negative keyword architecture and landing pages.',
+    track: 'SEM', topic: 'Google Ads', level: 'Advanced', instructor: 'dara', rating: 4.9,
+    desc: 'Once the basics work, profit comes from judgment: choosing the right bidding strategy and targets, feeding automation good signals, controlling Performance Max, testing ads with discipline, and building landing pages that convert the clicks you buy.',
+    learn: ['Select and tune smart bidding strategies', 'Structure and control Performance Max campaigns', 'Run statistically sound ad copy tests', 'Build a negative keyword architecture', 'Optimize landing pages for paid traffic'],
+    reqs: ['Google Ads Fundamentals or equivalent experience', 'Active conversion tracking on an account']
+  }, [
+    S('Bidding strategies', [
+      L('Smart bidding: how it works', 10,
+        ['Explain auction-time bidding', 'Name the main strategies', 'Know the data prerequisites'],
+        ['Smart bidding uses machine learning to set bids at auction time using signals such as device, location, time, audience, query and more. Strategies include **Maximize conversions**, **Maximize conversion value**, **Target CPA** and **Target ROAS**. Target strategies add a constraint and can be set as a portfolio across campaigns.',
+         'Automation is only as good as the conversion data it learns from. Make sure conversions are accurate, deduplicated, and reflect business value (use values for different lead types or products). Garbage in, garbage out. Allow a learning period and avoid frequent target changes.'],
+        ['A lead-gen firm values "booked consultation" at $300 and "newsletter signup" at $5. Importing both as conversions with values lets Target ROAS prioritize real prospects instead of cheap signups.'],
+        ['Audit conversion actions for duplicates and low-value goals', 'Assign values or set secondary actions', 'Document your current bidding strategy and why'],
+        ['Smart bidding uses real-time signals', 'Needs accurate conversions', 'Avoid frequent target changes']),
+      L('Choosing and setting targets', 10,
+        ['Select the strategy by goal and data', 'Set realistic CPA/ROAS targets', 'Adjust safely'],
+        ['Use Maximize conversions when you lack history or want volume; move to Target CPA when you know the allowable CPA and have roughly 30 conversions in the last 30 days. Use Target ROAS when conversion values differ and you have value tracking. Start targets near historical performance, since aggressive targets limit volume.',
+         'Change targets gradually (roughly 10 to 20%) and wait at least a couple of weeks. Watch impression share and volume; if volume collapses, the target is too tight. Keep a log of changes and annotate.'],
+        ['History shows $60 CPA. Business can afford $45. The manager sets Target CPA at $55, then $50 after three weeks, rather than jumping to $45 and starving the campaign.'],
+        ['Pull 90 days of CPA/ROAS by campaign', 'Set the first target near history', 'Plan stepwise adjustments'],
+        ['Match strategy to goals and data', 'Targets near history', 'Step changes gradually']),
+      L('Seasonality, learning and data signals', 8,
+        ['Handle seasonality adjustments', 'Understand learning status', 'Feed better signals'],
+        ['Seasonality adjustments tell Smart Bidding about short events (sales, promotions) with an expected conversion-rate change, for events of up to a week or so. They are not for long trends. Data exclusions remove periods of tracking problems from learning.',
+         'Learning status appears after major changes. Avoid edits during learning. Improve signals through first-party data: customer match lists, offline conversion imports and enhanced conversions, so bidding can optimize towards real revenue, not just form fills.'],
+        ['A two-day flash sale with +40% expected conversion rate is entered as a seasonality adjustment. A tracking outage on a Tuesday is added as a data exclusion.'],
+        ['List upcoming promotions to plan adjustments', 'Set up enhanced conversions or offline imports', 'Create a customer match list'],
+        ['Use seasonality adjustments for short events', 'Exclude bad data', 'Improve signals with first-party data'])
+    ], [
+      Q('Target ROAS is best when:', ['Conversion values vary', 'No tracking exists', 'Only calls matter', 'All conversions are worth the same'], 0, 'It optimizes for value.'),
+      Q('A common guideline before using Target CPA is:', ['Zero conversions', 'About 30 conversions in 30 days', '5 clicks', 'One year of data'], 1, 'Enough data helps the model.'),
+      Q('Aggressive targets can:', ['Limit volume', 'Always raise volume', 'Fix tracking', 'Remove ads'], 0, 'Tight targets restrict auctions entered.'),
+      Q('Seasonality adjustments are for:', ['Short events', 'Year-long trends', 'Changing domains', 'Quality Score'], 0, 'They are for brief predictable shifts.'),
+      Q('Offline conversion imports help:', ['Optimize towards real revenue', 'Reduce impressions', 'Block competitors', 'Delete data'], 0, 'They tie bidding to actual sales.')
+    ]),
+    S('Performance Max', [
+      L('What Performance Max is and when to use it', 9,
+        ['Describe PMax inventory', 'Understand asset groups', 'Know the trade-offs'],
+        ['Performance Max (PMax) is a goal-based campaign type that serves across Google Search, Shopping, YouTube, Display, Discover, Gmail and Maps using automation. You provide **asset groups**: images, videos, headlines, descriptions, logos, plus audience signals and a feed for retail. Google assembles ads and finds converting customers.',
+         'Strengths: reach, simple setup, strong for ecommerce with feeds. Trade-offs: less transparency on placement, a mix of brand and non-brand traffic, and limited control compared with Search. Evaluate it against incremental value, not just reported conversions.'],
+        ['A retailer launches PMax with a product feed and 3 asset groups by product category. Reporting shows strong ROAS, but 60% of conversions come from brand queries that Search would have won anyway.'],
+        ['List the inventory sources PMax uses', 'Prepare assets for one asset group', 'Define success beyond reported ROAS'],
+        ['PMax spans all Google inventory', 'Asset groups feed automation', 'Check incrementality']),
+      L('Controlling Performance Max', 10,
+        ['Use brand exclusions and negatives', 'Use audience signals and URL expansion controls', 'Split asset groups sensibly'],
+        ['Control levers include **brand exclusions** (to keep brand traffic in Search campaigns), **account-level negative keywords**, location and language targeting, audience signals (hints, not hard targeting), final URL expansion settings, and exclusions for URLs. Use search term insights to see categories driving results.',
+         'Structure asset groups by product theme or margin tiers with matching creative. Separate campaigns for products with different ROAS goals so one target does not mismatch another. Feed quality (titles, images, GTINs) heavily influences retail performance.'],
+        ['Brand exclusions are added to the PMax campaign, and brand terms are served by a dedicated Search campaign with lower CPCs. Reported ROAS falls, but profit from new customers rises.'],
+        ['Check brand exclusion settings', 'Review search term insights', 'Split campaigns by margin tier'],
+        ['Use exclusions and negatives', 'Audience signals are hints', 'Feed quality matters']),
+      L('Creative assets and measurement for PMax', 9,
+        ['Produce strong assets', 'Interpret asset ratings', 'Run incrementality tests'],
+        ['Provide high-quality images in multiple ratios, short videos (create your own so Google does not auto-generate poor ones), varied headlines and benefit-driven descriptions. Asset performance labels guide replacement of low performers.',
+         'Measure incremental lift with geo experiments or conversion lift where available: compare regions with and without the campaign. Combine with MER (marketing efficiency ratio: total revenue / total ad spend) to judge overall health.'],
+        ['A brand pauses PMax in a few matched regions for three weeks. Revenue falls 7% there versus control, indicating real but smaller incremental value than reported ROAS suggested.'],
+        ['Audit asset variety', 'Upload a short custom video', 'Plan a geo test'],
+        ['Provide varied quality assets', 'Replace low performers', 'Test incrementality'])
+    ], [
+      Q('Performance Max serves across:', ['Search only', 'Multiple Google channels', 'Email only', 'Social networks'], 1, 'It spans Google inventory.'),
+      Q('Brand exclusions in PMax help to:', ['Keep brand traffic in Search campaigns', 'Increase brand bids', 'Remove assets', 'Disable feeds'], 0, 'They limit brand capture.'),
+      Q('Audience signals are:', ['Hints for automation', 'Hard targeting', 'Billing options', 'Policies'], 0, 'They guide but do not restrict.'),
+      Q('MER stands for:', ['Marketing efficiency ratio', 'Minimum earnings return', 'Media exposure rate', 'Market entry rate'], 0, 'Total revenue / total ad spend.'),
+      Q('Geo experiments are used to:', ['Measure incrementality', 'Change fonts', 'Block countries', 'Edit feeds'], 0, 'They compare exposed and control regions.')
+    ]),
+    S('Ad copy testing and negative keywords', [
+      L('Testing ad copy with discipline', 10,
+        ['Form a hypothesis', 'Use experiments', 'Judge significance'],
+        ['Test one meaningful variable at a time: value proposition, offer, call to action, or proof point. Use Google Ads experiments (campaign drafts/experiments or ad variations) to split traffic fairly. Decide your primary metric up front (conversion rate or CPA, not just CTR) and a minimum sample.',
+         'Do not call winners early. Use a significance calculator or the experiment\'s own confidence reporting, and run through full weekly cycles. A 95% confidence threshold is a common standard. Document results so learnings accumulate.'],
+        ['Hypothesis: leading with "Free 2-day delivery" will beat "Shop Trail Shoes". The test runs three weeks, 50/50 split. Variant B has 12% higher conversion rate at 96% confidence and becomes the new control.'],
+        ['Write a hypothesis for your next test', 'Define metric and minimum sample', 'Create the experiment'],
+        ['One variable at a time', 'Primary metric before launch', 'Wait for significance']),
+      L('Negative keyword architecture', 9,
+        ['Build shared lists', 'Use negatives to shape traffic', 'Avoid blocking good traffic'],
+        ['Maintain layers: an account-level or shared list of universal negatives (jobs, free, torrent), campaign-level negatives to prevent overlap between campaigns, and ad-group negatives to steer queries to the right ad. Review search terms weekly for new negatives.',
+         'Be careful with broad negatives: a negative broad match "shoes" would block everything. Use phrase or exact negative match for precision. Negative matching is literal and does not include close variants or implied meaning.'],
+        ['A campaign for "running shoes" and one for "running shoes women" overlap. Adding "women" as a negative in the generic campaign steers those queries to the specific one.'],
+        ['Create a shared negative list', 'Resolve overlapping campaigns', 'Review last 30 days of search terms'],
+        ['Use layers of negatives', 'Be precise with match types', 'Review regularly']),
+      L('Ad customizers, RSAs and assets at scale', 8,
+        ['Use ad customizers', 'Test assets', 'Scale with feeds'],
+        ['Ad customizers insert dynamic information such as prices, countdowns or inventory into ads. Use them for offers and time-limited promotions. Keep fallback text for when data is missing.',
+         'At scale, build RSAs from structured themes and use asset reporting. Add assets (images, logos, promotions, price) at campaign or account level for more space and relevance.'],
+        ['A travel brand uses a countdown customizer: "Sale ends in 3 days". The ad updates automatically and CTR rises.'],
+        ['Add one ad customizer with a fallback', 'Review asset performance', 'Add promotion and price assets'],
+        ['Customizers add relevance', 'Always set fallbacks', 'Assets expand ad space'])
+    ], [
+      Q('A good ad test changes:', ['Many variables at once', 'One meaningful variable', 'Nothing', 'The domain'], 1, 'Single-variable tests give clear learning.'),
+      Q('A common confidence threshold:', ['50%', '95%', '10%', '1%'], 1, '95% is typical.'),
+      Q('Which negative match type is more precise?', ['Phrase or exact', 'All broad', 'None', 'Auto'], 0, 'They limit the block to specific patterns.'),
+      Q('Shared negative lists are good for:', ['Universal negatives across campaigns', 'Bidding', 'Creating ads', 'Reporting'], 0, 'They reduce repetition.'),
+      Q('Why set fallback text in customizers?', ['In case data is missing', 'To lengthen ads', 'To block bids', 'To rename accounts'], 0, 'Fallbacks prevent broken ads.')
+    ]),
+    S('Landing page optimization for paid traffic', [
+      L('Message match and page structure', 10,
+        ['Align ad and page', 'Structure a landing page', 'Reduce friction'],
+        ['Message match means the page continues the promise made by the ad: same offer, keywords and tone. Above the fold, include a clear headline, supporting subhead, a primary call to action, a hero visual and a trust element. Below, add benefits, proof, FAQs and a repeated CTA.',
+         'Remove distractions: minimal navigation, one primary goal and short forms. Ask only for needed fields; every extra field reduces conversion. Page speed on mobile is critical, because many paid clicks come from phones.'],
+        ['An ad promises "Free 10-minute roof quote". The page headline reads "Get your free 10-minute roof quote" with a three-field form. Conversion rate improves from 4% to 9% compared to the generic homepage.'],
+        ['Audit your landing page against the structure', 'Count form fields and reduce them', 'Test mobile speed'],
+        ['Match message to the ad', 'One goal per page', 'Reduce friction']),
+      L('Trust, proof and persuasion', 9,
+        ['Use credible proof', 'Address objections', 'Make offers clear'],
+        ['Include genuine testimonials, review counts, certifications, guarantees and recognizable logos where real. Address objections in an FAQ: price, time, risk, how it works. State the offer and next step plainly.',
+         'Avoid manipulation or false scarcity. Misleading claims violate advertising policies and erode trust. Clarity beats cleverness.'],
+        ['A solar installer adds a "How it works in 3 steps" section, installer certifications and a 25-year warranty summary. Lead quality improves because visitors understand the process.'],
+        ['List five objections your customers raise', 'Add answers to the page', 'Verify all claims are accurate'],
+        ['Real proof only', 'Answer objections', 'Be clear and honest']),
+      L('Landing page testing and CRO for ads', 9,
+        ['Prioritize tests', 'Use tools like heatmaps', 'Combine ad and page learning'],
+        ['Prioritize tests by potential impact and ease: headline, CTA, form length, hero image, social proof placement. Use heatmaps and session recordings to see where visitors hesitate. Use A/B testing tools with adequate traffic.',
+         'Feed insights back into ads. If a certain benefit wins on the page, test it in headlines too. Segment results by device and traffic source.'],
+        ['A test shows that moving testimonials above the form increases form completion by 15% on mobile only. The team keeps the desktop layout and adopts the mobile change.'],
+        ['List 5 test ideas and score them', 'Set up a heatmap on one page', 'Run an A/B test'],
+        ['Prioritize by impact and ease', 'Use behavior data', 'Segment by device'])
+    ], [
+      Q('Message match means:', ['The page continues the ad promise', 'Using the same font', 'Identical design', 'Same URL'], 0, 'Visitors expect continuity.'),
+      Q('Reducing form fields typically:', ['Improves conversion', 'Lowers conversion', 'Has no effect', 'Breaks the page'], 0, 'Fewer fields reduce friction.'),
+      Q('Which is poor practice?', ['False scarcity', 'Real testimonials', 'Clear offers', 'FAQs'], 0, 'Misleading claims erode trust and violate policy.'),
+      Q('Heatmaps help to:', ['See where visitors click and hesitate', 'Change bids', 'Edit feeds', 'Verify domains'], 0, 'They visualize behavior.'),
+      Q('Test results should be segmented by:', ['Device and source', 'Nothing', 'Color only', 'Time zone only'], 0, 'Segments can reveal different winners.')
+    ])
+  ]);
+})();

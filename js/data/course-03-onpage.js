@@ -1,0 +1,127 @@
+(function () {
+  var h = QF.h, L = h.L, S = h.S, Q = h.Q;
+  QF.addCourse({
+    slug: 'on-page-seo', title: 'On-Page SEO Essentials', subtitle: 'Title tags, meta descriptions, headings, internal links and content optimization, done properly.',
+    track: 'SEO', topic: 'On-Page SEO', level: 'Beginner', instructor: 'maren', rating: 4.7,
+    desc: 'On-page SEO is everything you control directly on a page. This course covers the elements search engines and searchers read first: titles and snippets, heading structure, URLs and images, internal links, and a repeatable process for optimizing existing content without stuffing it.',
+    learn: ['Write title tags and meta descriptions that earn clicks', 'Structure pages with a clean heading hierarchy', 'Create descriptive URLs and optimize images', 'Plan internal linking that spreads authority', 'Run a repeatable on-page optimization workflow'],
+    reqs: ['Basic understanding of keywords and search intent', 'Ability to edit page titles and content in a CMS']
+  }, [
+    S('Titles and snippets', [
+      L('Writing effective title tags', 9,
+        ['Describe the role of the title tag', 'Write titles that balance keyword and click appeal', 'Keep titles within display limits'],
+        ['The `<title>` element is one of the strongest on-page relevance signals and is usually the blue headline in results. Put the primary keyword near the front, make it accurate to the page, and give the searcher a reason to click. Keep it roughly under 60 characters (display is limited by pixel width, about 580 pixels, so wide letters truncate sooner).',
+         'Google may rewrite titles it thinks are poor, too long, or keyword-stuffed. Avoid repeating the same title across pages, avoid all-caps and clutter, and use the brand name at the end if at all. Each page needs a unique title that matches its main topic.'],
+        ['Weak: `Home | Best Plumber | Plumbing Services | Emergency Plumber London`. Better: `Emergency Plumber in London: 24/7 Call-Out, Fixed Prices`. It leads with the main term, states differentiators and fits length.'],
+        ['Export your page titles with a crawler', 'Flag titles that are duplicate, missing, or over 60 characters', 'Rewrite your five most important titles'],
+        ['Titles are unique, accurate and keyword-led', 'About 60 characters or less', 'Write for clicks as well as relevance']),
+      L('Meta descriptions and rich snippets', 8,
+        ['Explain what meta descriptions do and do not do', 'Write persuasive descriptions', 'Recognize when Google rewrites them'],
+        ['The meta description is not a ranking factor, but it often becomes the snippet, so it influences click-through rate. Write about 120 to 155 characters that summarize the page, include the main topic naturally and finish with a clear benefit or call to action. Matching words in the query are bolded in the snippet.',
+         'Google rewrites snippets often, using page text that better matches the query. That is fine. Write a good description anyway for pages that matter, and make sure pages have enough on-page text that a good fallback snippet exists.'],
+        ['`Compare five standing desks tested over 90 days. See stability scores, noise levels and prices, plus our pick for small spaces.` This states the content, proof and the outcome, in under 155 characters.'],
+        ['Find pages with missing or duplicate descriptions', 'Write unique ones for your top 10 pages', 'Review Search Console CTR to find low-CTR pages worth testing'],
+        ['Meta descriptions influence clicks, not rankings', 'Be specific and benefit-led', 'Google may rewrite snippets']),
+      L('Improving click-through rate', 8,
+        ['Find pages with CTR upside', 'Test snippet changes methodically', 'Avoid misleading clickbait'],
+        ['In Search Console, filter for pages with high impressions and below-average CTR for their position. These are your quick wins: they already rank but fail to attract clicks. Typical fixes: add the year for freshness, include a number or specific benefit, and align the title with dominant intent.',
+         'Change one thing at a time and compare 2 to 4 weeks before and after, accounting for seasonality. Do not promise what the page does not deliver; high bounce and low satisfaction erode performance over time.'],
+        ['A guide ranks at position 4 with 2.1% CTR while position-4 average is closer to 6%. Retitling from "Email Marketing Guide" to "Email Marketing Guide for Beginners (2026): Setup, Templates, Metrics" lifts CTR to 3.9% over a month.'],
+        ['Export queries/pages with impressions above 1,000 and CTR under average', 'Pick three and rewrite titles', 'Record dates so you can compare results later'],
+        ['Target ranking pages with weak CTR first', 'Change one variable at a time', 'Keep titles honest'])
+    ], [
+      Q('About how long should a title be before it risks truncation?', ['20 characters', 'About 60 characters', 'About 160 characters', '300 characters'], 1, 'Roughly 60 characters or about 580 pixels is the common guideline.'),
+      Q('Are meta descriptions a direct ranking factor?', ['Yes, it is the strongest ranking factor', 'No, but they can affect CTR', 'Only on mobile search results', 'Only for local business sites'], 1, 'They influence clicks via the snippet rather than ranking directly.'),
+      Q('If Google rewrites your snippet, what should you conclude?', ['That you have been penalized for bad copy', 'It chose text matching the query better', 'That the page has been removed from the index', 'That your meta tags are broken'], 1, 'Rewrites are common and not a penalty.'),
+      Q('Best first candidates for CTR optimization?', ['Pages that have no impressions at all', 'Pages with high impressions and low CTR', 'Pages carrying a noindex tag', 'Pages that already have the best CTR on the site'], 1, 'They already rank, so improving the snippet can capture more clicks.'),
+      Q('What is a risk of clickbait titles?', ['Higher rankings because more people click', 'Disappointed visitors and poor engagement', 'Faster indexing of the page', 'Duplicate content penalties across the site'], 1, 'Titles that overpromise lead to bounces and distrust.')
+    ]),
+    S('Headings and page structure', [
+      L('Heading hierarchy', 8,
+        ['Use one H1 and logical subheadings', 'Explain headings for readers and accessibility', 'Include keywords naturally'],
+        ['The H1 is the main on-page heading and should reflect the page topic. H2s divide it into sections, and H3s break those into subtopics. Do not skip levels for styling; use CSS to style instead. A logical hierarchy helps readers scan, helps screen-reader users navigate, and helps search engines understand structure.',
+         'Use headings that answer questions people ask. A heading such as "How long does a roof replacement take?" can match a People Also Ask-style query and makes a good target for a concise answer paragraph directly beneath it.'],
+        ['A page uses an H1 "Roof Replacement Cost Guide", H2s for "Average cost by material", "Labor costs", "How to get quotes", and H3s per material under the first H2. Each H2 stands alone as a scannable summary.'],
+        ['Use a browser extension or crawler to list all headings on a page', 'Check there is one H1 and no skipped levels', 'Rewrite two vague headings as question or benefit headings'],
+        ['One H1, then H2 and H3 in order', 'Headings are for structure, not styling', 'Question headings can earn snippets']),
+      L('Content structure for scanning and snippets', 9,
+        ['Lead with the answer', 'Use lists and tables where suited', 'Format for snippet eligibility'],
+        ['Most readers scan. Put the direct answer near the top, then support it. Use short paragraphs, bullet lists for steps or options, and tables for comparisons. This increases engagement and creates content blocks that can be pulled into featured snippets.',
+         'For a "how to" query, use a numbered list with each step as a short sentence. For a definition, give a one to two sentence definition immediately beneath the heading. Avoid walls of text and avoid hiding the answer after a long introduction.'],
+        ['Under the heading "What is a canonical tag?" the first line reads: "A canonical tag tells search engines which URL is the preferred version of a page when duplicates exist." The rest of the section explains how to set it up.'],
+        ['Pick a page and rewrite its first paragraph to answer the main query within 50 words', 'Convert one long paragraph into a list or table', 'Check the result on mobile'],
+        ['Answer first, then elaborate', 'Lists and tables help scanning', 'Write snippet-friendly blocks']),
+      L('Writing for the topic, not the keyword', 9,
+        ['Cover subtopics and related entities', 'Avoid keyword stuffing', 'Use competitor SERPs to find gaps'],
+        ['Modern search engines understand synonyms and context, so repeating an exact phrase adds nothing. Instead, cover the subtopics a knowledgeable person would address. Look at "People also ask", related searches, and top-ranking pages to find the questions and terms that belong to a thorough answer.',
+         'Read your draft aloud. If a sentence sounds forced because of a keyword, rewrite it. Include the primary phrase in the title, H1, intro and where natural elsewhere, then focus on completeness, clarity and originality.'],
+        ['An article on "how to start a vegetable garden" that only repeats the phrase ranks worse than one that covers choosing a location, soil preparation, what to plant by season, watering, and common beginner mistakes.'],
+        ['List ten subtopics a thorough answer should cover', 'Compare to your page and mark gaps', 'Edit to fill the top three gaps'],
+        ['Cover the topic completely', 'Stuffing hurts readers and rankings', 'Use SERPs to find missing subtopics'])
+    ], [
+      Q('How many H1 elements should a typical page have?', ['None', 'One main H1', 'Five', 'As many as keywords'], 1, 'One clear H1 describing the page is the standard practice.'),
+      Q('Why avoid skipping heading levels?', ['It breaks the HTTPS connection', 'It harms structure and accessibility', 'Google blocks pages with skipped levels', 'It makes the page slower to crawl'], 1, 'Logical order helps screen readers and clarifies content structure.'),
+      Q('Which format suits a "how to" snippet best?', ['A single dense paragraph', 'A numbered list of steps', 'An image only', 'A table of contacts'], 1, 'Step lists fit procedural queries.'),
+      Q('What is the best way to write about a topic?', ['Repeat the exact keyword as often as possible', 'Cover subtopics a knowledgeable person would', 'Copy the structure of the top competitor', 'Write the shortest text that mentions the keyword'], 1, 'Comprehensive coverage serves intent better than repetition.'),
+      Q('Where should the direct answer go?', ['At the very bottom of the page', 'Near the top of the relevant section', 'Inside an image so it looks designed', 'In the footer, where every page can share it'], 1, 'Answer-first writing helps both readers and snippet extraction.')
+    ]),
+    S('URLs, images and internal links', [
+      L('Clean URLs', 7,
+        ['Write short descriptive URLs', 'Understand when to change a URL', 'Handle redirects when changing'],
+        ['A good URL is readable, lowercase, uses hyphens between words and describes the content: `/guides/keyword-research`. Avoid session IDs, unnecessary parameters and deep nesting. URLs are a minor ranking signal, but they affect clarity, shareability and click trust.',
+         'Do not change URLs of ranking pages for cosmetic reasons. If you must, use a 301 redirect from the old URL to the new one, update internal links, and update the sitemap. Redirects pass most signals, but a change always carries some risk.'],
+        ['Replace `/index.php?id=482&cat=7` with `/running-shoes/trail`. The new URL is readable and tells both users and engines what to expect.'],
+        ['Audit your URLs for parameters and uppercase letters', 'Define a URL convention document', 'Never change a ranking URL without a redirect plan'],
+        ['Short, readable and hyphenated', 'Avoid unnecessary changes', 'Always 301 when you must change']),
+      L('Image optimization', 9,
+        ['Write useful alt text', 'Compress and size images correctly', 'Use descriptive filenames'],
+        ['Alt text describes an image for people who cannot see it and gives engines context. Write a short, accurate description ("Red trail running shoe on a muddy path"), not a keyword list. Decorative images should have empty alt (`alt=""`). Use descriptive filenames like `trail-running-shoe.jpg`.',
+         'Images are often the largest files on a page. Serve modern formats such as WebP or AVIF, size images to their display dimensions, set `width` and `height` to prevent layout shift, lazy-load below-the-fold images, and compress without visible quality loss.'],
+        ['A 3 MB hero photo is replaced with a 140 KB WebP at the correct size, with `width` and `height` set and `fetchpriority="high"` for the hero. Largest Contentful Paint improves by over a second.'],
+        ['Run PageSpeed Insights on a page and note image recommendations', 'Fix alt text on your top ten pages', 'Convert one large image to WebP'],
+        ['Alt text is for accessibility first', 'Compress, resize, modern formats', 'Set dimensions to avoid layout shift']),
+      L('Internal linking strategy', 10,
+        ['Explain how internal links pass relevance and authority', 'Use descriptive anchor text', 'Plan hubs and spokes'],
+        ['Internal links help crawlers discover pages and indicate which pages matter. Pages linked often from important pages get more attention. Anchor text should describe the destination ("keyword research guide") rather than "click here".',
+         'Build a hub-and-spoke structure: a pillar page for a broad topic links to detailed articles, and each of those links back and across to related pieces. Add links from your high-authority pages (often the homepage or popular posts) to pages you want to boost, and avoid orphan pages.'],
+        ['A site\'s best-linked post gets 40,000 visits a month but never links to the commercial service page. Adding two contextual links with anchors like "technical SEO audit service" sends qualified visitors and signals the service page\'s importance.'],
+        ['Find your five pages with the most backlinks', 'Add contextual links from each to a priority page', 'Run a crawl to find orphan pages and link them in'],
+        ['Internal links drive discovery and emphasis', 'Use descriptive anchors', 'Build hub-and-spoke clusters'])
+    ], [
+      Q('Which URL is best?', ['/p?id=48&x=2', '/Trail_Running_Shoes', '/running-shoes/trail', '/a/b/c/d/e/f/shoes'], 2, 'It is short, readable, lowercase and hyphenated.'),
+      Q('What should you do if you must change a ranking URL?', ['Delete the old page and publish a new one', 'Use a 301 redirect and update links', 'Do nothing and let Google work it out', 'Block the old URL in robots.txt'], 1, 'A 301 passes signals to the new URL.'),
+      Q('What is the right alt text for a decorative image?', ['A string of keywords about the page', 'Empty alt attribute', 'The words \'click here\'', 'A copy of the page title'], 1, 'Decorative images should have alt="" so screen readers skip them.'),
+      Q('Which anchor text is best for an internal link?', ['click here', 'read more', 'technical SEO audit checklist', 'link'], 2, 'Descriptive anchors tell users and engines about the destination.'),
+      Q('What is an orphan page?', ['A page that contains no images', 'A page with no internal links pointing to it', 'A page that has many internal links', 'A page carrying a noindex tag'], 1, 'Orphans are hard to discover and receive little internal authority.')
+    ]),
+    S('Optimizing content in practice', [
+      L('An on-page optimization workflow', 10,
+        ['Follow a repeatable process', 'Prioritize pages for optimization', 'Document changes'],
+        ['A reliable workflow: choose a page (ranking positions 5 to 20 are often best), confirm the target keyword and intent, review the current top results, list gaps, update title, H1, intro, headings and body, improve internal links, add media, and then request reindexing in Search Console.',
+         'Log each change with date, page and what was altered. Review impact after 4 to 8 weeks. Treat optimization as a loop: measure, change, measure again.'],
+        ['A post at position 11 for "email subject lines" gets a new title, a table of 50 examples, two new subtopics (A/B testing, spam triggers) and links from three related posts. Eight weeks later it ranks at position 5.'],
+        ['Pick one page ranking 5 to 20', 'Apply the workflow steps and log them', 'Set a calendar reminder for a results review'],
+        ['Optimize pages that nearly rank well', 'Change and log systematically', 'Measure after several weeks']),
+      L('Refreshing without wrecking', 8,
+        ['Decide what to keep, cut or add', 'Preserve URL and strong sections', 'Update dates honestly'],
+        ['When updating a page, keep the URL and the parts that already work. Replace stale statistics, add new sections where competitors cover more, remove outdated advice, and improve clarity. Check the page\'s top queries first so you do not accidentally remove content that drives traffic.',
+         'Update the visible date only when content materially changes. Misleading dates are poor practice and can erode trust.'],
+        ['A tax guide ranking for "self-assessment deadlines" is updated with new dates and a downloadable checklist, but the existing FAQ section (top traffic source) is preserved and expanded.'],
+        ['Check top queries for a page before editing', 'Update statistics and examples', 'Re-submit the URL in Search Console'],
+        ['Preserve what ranks', 'Update with real changes', 'Do not fake freshness']),
+      L('On-page checklist and common mistakes', 8,
+        ['Apply a final checklist', 'Spot common mistakes', 'Prioritize fixes by impact'],
+        ['Final check: unique title and description, one H1, logical headings, answer-first intro, descriptive URL, optimized images with alt text, internal links in and out, mobile layout, schema where relevant, and no accidental noindex.',
+         'Common mistakes include duplicate titles across templates, thin category pages, hidden text, keyword stuffing, and burying key content in tabs or images. Fix high-traffic pages first and fix template-level problems before page-level ones.'],
+        ['A crawl shows 800 product pages share the title template `Product | Store`. One template fix adds the product name and category to all 800 titles at once.'],
+        ['Turn the checklist into a spreadsheet', 'Audit three pages against it', 'Fix any template-level issues first'],
+        ['Use a checklist every time', 'Template fixes scale', 'Prioritize by traffic and impact'])
+    ], [
+      Q('Which pages are often best to optimize first?', ['Pages that are not indexed at all', 'Pages ranking positions 5 to 20', 'Pages that contain no content yet', 'The 404 error page'], 1, 'They are close to page-one gains.'),
+      Q('What should you do before editing an existing page?', ['Delete it and start again from scratch', 'Check its top queries and traffic sources', 'Change its URL to match the new keyword', 'Remove all of its headings'], 1, 'You must not remove content that already drives traffic.'),
+      Q('When should you update a page\'s visible date?', ['Every time you open the page in the editor', 'Only when content materially changes', 'Never, because dates are decorative', 'Every week, to look fresh'], 1, 'Fake freshness harms trust.'),
+      Q('Why fix template-level issues first?', ['They affect many pages at once', 'They are easy to ignore for a while', 'Google requires template fixes first', 'They change the site\'s domain'], 0, 'One fix can improve hundreds of pages.'),
+      Q('How long should you wait before judging an optimization?', ['One hour', 'Several weeks', 'Exactly one day', 'Never'], 1, 'Reindexing and ranking changes take time; 4 to 8 weeks is common.')
+    ])
+  ]);
+})();

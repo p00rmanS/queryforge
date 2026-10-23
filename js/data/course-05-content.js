@@ -1,0 +1,127 @@
+(function () {
+  var h = QF.h, L = h.L, S = h.S, Q = h.Q;
+  QF.addCourse({
+    slug: 'content-strategy-eeat', title: 'Content Strategy & E-E-A-T', subtitle: 'Topical authority, content briefs, credibility signals and refreshing what you already have.',
+    track: 'SEO', topic: 'Content', level: 'Intermediate', instructor: 'priya', rating: 4.8,
+    desc: 'Rankings follow useful, trustworthy content produced systematically. You will learn how to plan topic clusters, demonstrate experience, expertise, authoritativeness and trust (E-E-A-T), write briefs writers can execute, and maintain a library by refreshing, consolidating and pruning.',
+    learn: ['Plan topic clusters that build topical authority', 'Demonstrate E-E-A-T on pages and across a site', 'Write content briefs that produce rankable articles', 'Audit a content library and decide: keep, refresh, merge or remove', 'Measure content performance beyond traffic'],
+    reqs: ['Keyword research basics', 'Familiarity with a CMS or content workflow']
+  }, [
+    S('Topical authority', [
+      L('Topics, entities and clusters', 10,
+        ['Define topical authority', 'Build a pillar and cluster plan', 'Choose breadth versus depth'],
+        ['Topical authority describes how thoroughly and credibly a site covers a subject. Search engines increasingly model topics and entities rather than isolated keywords, so a site that covers a subject comprehensively, with consistent internal linking, tends to rank more of its pages for more queries than a site with scattered posts.',
+         'A **pillar page** gives a broad overview of a core topic and links to **cluster pages** that go deep on subtopics. Each cluster page links back to the pillar and to siblings. Start narrow: dominate one topic before expanding to adjacent ones.'],
+        ['A coffee equipment retailer picks "home espresso" as its core topic. The pillar covers the whole process; clusters cover grinders, portafilters, water quality, dialing in shots and machine maintenance. 30 interlinked pieces make the site a go-to authority.'],
+        ['Choose one core topic you want to own', 'List 20 subtopics people ask about', 'Sketch the pillar and cluster links on paper'],
+        ['Authority comes from depth and coherence', 'Pillar plus cluster structure', 'Start narrow, then expand']),
+      L('Mapping content gaps', 9,
+        ['Inventory existing content against a topic map', 'Spot missing and weak areas', 'Sequence a roadmap'],
+        ['Build a topic map of everything a knowledgeable newcomer to the subject needs to learn, organized by stage. Place each existing page on the map, noting its quality, traffic and rankings. Empty or weak squares are your gaps.',
+         'Sequence the roadmap by value: quick wins (updating decent pages), bottom-of-funnel gaps (revenue), then foundational pieces that support clusters. Avoid filling gaps with weak content just to check a box; a missing page is better than a bad one.'],
+        ['A gap map reveals that a cybersecurity blog has dozens of "what is" posts but nothing for buyer-stage queries like "EDR vs antivirus". Those comparison pages become priority one.'],
+        ['Create a topic-map table: topic, existing URL, quality 1 to 5, gap?', 'Highlight the five gaps with the highest business value', 'Draft titles for them'],
+        ['A topic map shows gaps visually', 'Prioritize by business value', 'Do not publish filler']),
+      L('Internal linking for authority', 8,
+        ['Connect clusters purposefully', 'Use descriptive anchors', 'Maintain links as content grows'],
+        ['Links are how a topic cluster becomes a structure. Every new article should link to its pillar and two or three related pieces, and older relevant pages should be updated to link to it. Use anchors that describe the target.',
+         'Audit quarterly: find pages with few internal links, broken links, and chains of redirects. Add a "related reading" module only if it links meaningfully; random widgets add noise, not signal.'],
+        ['After publishing a new article on espresso water quality, the team adds links from the pillar, the grinder guide and the machine descaling article, and links back to those three from the new piece.'],
+        ['Pick one recent article and add links from three older relevant pages', 'Check the new article links to its pillar', 'List pages with fewer than three inbound internal links'],
+        ['Link new content in both directions', 'Anchors should be descriptive', 'Audit link structure regularly'])
+    ], [
+      Q('What is a pillar page?', ['A page that has no links to or from it', 'A broad overview that links to detailed cluster pages', 'A paid landing page built for ads', 'A duplicate of another page on the site'], 1, 'It anchors a topic cluster.'),
+      Q('Why start with a narrow topic?', ['It is cheaper to host a narrow site', 'You can build real depth and authority first', 'Google requires a narrow topic for new sites', 'It means you can avoid internal links'], 1, 'Dominating a small topic beats thinly covering many.'),
+      Q('A content gap analysis compares:', ['Page speed across your templates', 'Existing content to a topic map', 'Page titles only', 'Backlinks only'], 1, 'It highlights what is missing or weak.'),
+      Q('Which is the best response to a content gap?', ['Publish quick filler pages to tick the box', 'Create high-quality content for it, prioritized by value', 'Ignore the gap and hope it fills itself', 'Copy the competitor\'s page and rename it'], 1, 'Quality and value order matter.'),
+      Q('After publishing a new article you should:', ['Leave it unlinked so it stays fresh', 'Link it to the pillar and related pages and update older pages to link to it', 'Add noindex so it does not compete with older pages', 'Delete older pages that cover similar ground'], 1, 'Two-way internal links integrate the new page.')
+    ]),
+    S('E-E-A-T and quality', [
+      L('What E-E-A-T is and is not', 9,
+        ['Define the four components', 'Explain that it is not a direct ranking factor', 'Know where it comes from'],
+        ['E-E-A-T stands for **Experience, Expertise, Authoritativeness and Trust**. It comes from Google\'s Search Quality Rater Guidelines, which human raters use to evaluate search quality. It is not a single score or a direct ranking factor, but Google says its systems try to reward content that shows these qualities. Trust is the most important element.',
+         'The stakes rise for "Your Money or Your Life" topics such as health, finance, legal and safety, where inaccurate information can cause real harm. For these, expertise and sources matter most. For a hobby topic, first-hand experience may matter more than formal credentials.'],
+        ['A review of a camera that includes original photos, test conditions and sample files shows **experience**. A tax guide written by a certified accountant with cited sources shows **expertise** and **trust**.'],
+        ['Read the E-E-A-T section of the Search Quality Rater Guidelines', 'Classify your site topic as YMYL or not', 'List what proof of E-E-A-T you could show'],
+        ['E-E-A-T guides evaluation, not a direct score', 'Trust is central', 'YMYL topics need higher standards']),
+      L('Showing E-E-A-T on the page', 10,
+        ['Add visible authorship and credentials', 'Cite sources and show original work', 'Provide transparency about the site'],
+        ['Put a real author byline with a short bio and link to an author page that lists credentials and other work. Reviews and guides should show first-hand evidence: your own photos, data, screenshots, test results or case studies. Cite primary sources and link to them. For YMYL content, add reviewer credits where appropriate.',
+         'Site-level trust includes clear About and Contact pages, an editorial policy, a corrections process, secure checkout and honest advertising or affiliate disclosures. Make it easy to find who is responsible for the site.'],
+        ['A health article is rewritten with a registered dietitian as author, a medical reviewer note, citations to peer-reviewed sources and a "last reviewed" date. The page gains trust signals for both users and quality raters.'],
+        ['Add or improve author bios on your ten key pages', 'Create or update the About and Contact pages', 'Add first-hand evidence to one review or guide'],
+        ['Show who wrote it and why they are qualified', 'Cite sources and show original evidence', 'Be transparent about the site']),
+      L('Quality content and the helpful content mindset', 9,
+        ['Apply self-assessment questions', 'Avoid content made primarily for search engines', 'Use AI assistance responsibly'],
+        ['Google encourages self-assessment: Does the content provide original information or analysis? Would a reader feel they learned enough to achieve their goal? Is it substantially more valuable than other pages? Content created mainly to attract search clicks, such as scaled low-value articles, risks being demoted or treated as spam.',
+         'Using AI to assist drafting is allowed, but publishing mass-produced unreviewed text to manipulate rankings violates spam policies. Add subject-matter review, original insights, fact-checking and editing. The key test is value to the reader, not how it was produced.'],
+        ['A site publishes 500 AI-generated city guides with identical structure and no local insight; traffic collapses after a core update. Another site publishes 40 locally researched guides with photos and interviews, and grows.'],
+        ['Score your best page on the self-assessment questions', 'Identify one original element you can add', 'Set an editorial rule for reviewing any AI-assisted draft'],
+        ['Write for readers first', 'Scaled low-value content is risky', 'Human expertise and review add value'])
+    ], [
+      Q('What does the first E in E-E-A-T stand for (newest addition)?', ['Evidence', 'Experience', 'Engagement', 'Efficiency'], 1, 'Experience refers to first-hand, real-world experience.'),
+      Q('Is E-E-A-T a single direct ranking score?', ['Yes, it is one number for every site', 'No, it guides evaluation of quality', 'Only for ecommerce websites', 'Only for news publishers'], 1, 'It is a framework used in the rater guidelines.'),
+      Q('Which component does Google describe as most important?', ['Authoritativeness', 'Expertise', 'Trust', 'Experience'], 2, 'Trust is the center of the framework.'),
+      Q('Which topics demand the highest standards?', ['Hobby blogs about collecting stamps', 'Health, finance, legal and safety (YMYL)', 'Meme pages shared on social media', 'Sports scores and fixtures'], 1, 'Inaccurate information there can cause harm.'),
+      Q('What is the risk of mass-publishing unreviewed AI content to rank?', ['There is no risk because search engines cannot tell', 'It can violate spam policies and lose rankings', 'It always ranks well for a while', 'It improves site speed'], 1, 'Scaled low-value content is a spam policy concern.')
+    ]),
+    S('Briefs and production', [
+      L('Writing a content brief', 10,
+        ['List the elements of a strong brief', 'Include intent and angle', 'Brief for a specific reader'],
+        ['A brief turns research into instructions. Include: target keyword and secondary terms, search intent, target reader, goal of the page, working title, outline with H2s, questions to answer, required examples or data, internal links to include, competitors to beat and why, word count guidance (as a range, not a goal), and calls to action.',
+         'The angle is crucial: what will this piece offer that the top results do not? Without a differentiating angle, you produce a clone. A good brief also states what to avoid, such as claims requiring legal review.'],
+        ['A brief for "SaaS churn rate" says: intent informational with calculation focus; reader is a finance lead at a SaaS startup; must include formula, benchmark ranges with sources, a worked example and a spreadsheet template; angle: cohort-based churn which competitors ignore.'],
+        ['Create a brief template with the above fields', 'Fill it for one planned article', 'Have someone else review whether they could write from it'],
+        ['Briefs convert research into action', 'Define intent, reader and angle', 'State what makes the piece different']),
+      L('Production workflow and quality control', 9,
+        ['Define roles and steps', 'Create a quality checklist', 'Publish and promote consistently'],
+        ['A repeatable workflow: topic selection, brief, draft, subject-matter review, edit, optimize (titles, links, schema, images), publish, promote, measure. Assign owners and deadlines for each stage and keep a shared content calendar.',
+         'Use a pre-publish checklist: accuracy verified, sources cited, claims checked, intent satisfied, readable on mobile, internal links added, metadata complete, and author bio present. Consistency beats bursts; a steady cadence you can maintain is better than a rush followed by silence.'],
+        ['A team of three publishes four quality articles a month. Each moves through a board with columns for Brief, Draft, SME Review, Edit, SEO, Scheduled, Live. Bottlenecks become visible at a glance.'],
+        ['Draw your workflow in stages with owners', 'Write a 10-point pre-publish checklist', 'Choose a sustainable monthly cadence'],
+        ['A defined workflow reduces errors', 'Checklists protect quality', 'Sustainable cadence beats bursts']),
+      L('Promotion and distribution', 8,
+        ['Plan distribution before writing', 'Repurpose content', 'Earn early engagement and links'],
+        ['Great content still needs an audience. Plan distribution while you brief: email newsletter, social posts, communities where your readers gather, partner shares, and outreach to people you cited or interviewed. Early visibility can bring links and signals that help rankings later.',
+         'Repurpose a core piece into a short video, a LinkedIn carousel, a slide deck and a newsletter section. Each format reaches a different audience and points back to the original.'],
+        ['After publishing original salary survey data, the team emails the 12 publications likely to cite it, shares charts on social media and posts a summary in a relevant community, earning 9 links in the first month.'],
+        ['List three channels where your readers are', 'Plan a distribution checklist per article', 'Repurpose one article into two other formats'],
+        ['Plan promotion with the brief', 'Repurpose to extend reach', 'Early visibility compounds'])
+    ], [
+      Q('A good content brief includes:', ['Only the target keyword', 'Intent, audience, outline, angle and links', 'Only a word count target', 'Only the name of the author'], 1, 'It must give enough guidance to produce a differentiated page.'),
+      Q('Why define an angle?', ['To reduce the length of the article', 'To differentiate from existing results', 'To avoid having to edit the draft', 'To hide the topic from competitors'], 1, 'Without differentiation you produce a clone.'),
+      Q('What is a sensible way to treat word count?', ['A fixed rule that every article must meet', 'A rough guide based on what the topic needs', 'Always aim for 3,000 words', 'Something readers never notice'], 1, 'Length should follow the needs of the topic and intent.'),
+      Q('Which step belongs before publishing?', ['Subject-matter review and checklist', 'Deleting the brief so the writer starts fresh', 'Removing all internal links to keep the page clean', 'Disabling the mobile version while it is checked'], 0, 'Quality control protects accuracy and trust.'),
+      Q('Why plan distribution early?', ['It slows production down, so skip it', 'It helps content reach an audience and earn links', 'It removes the need for SEO', 'Google requires a distribution plan before indexing'], 1, 'Promotion creates early visibility and link opportunities.')
+    ]),
+    S('Refreshing, consolidating and pruning', [
+      L('Running a content audit', 10,
+        ['Collect the right data', 'Classify pages', 'Decide per page'],
+        ['Export all URLs with metrics: organic clicks and impressions, average position, backlinks, conversions, last updated date and word count. Add a quality judgment. Then classify each page into: **keep as is**, **refresh**, **consolidate**, or **remove/redirect**.',
+         'Decision guide: high traffic and good quality, keep; ranking positions 5 to 20 with dated content, refresh; several pages targeting the same topic, consolidate into the strongest; no traffic, no links, no value, remove (410) or redirect if a relevant target exists.'],
+        ['A 600-page blog audit finds 140 posts with zero clicks in 12 months, 90 near-duplicate topics and 60 high-potential outdated posts. The team removes 70, merges 90 into 30, and refreshes the 60 first.'],
+        ['Export your content metrics into a sheet', 'Add a decision column', 'Start with the ten refresh candidates'],
+        ['Audit with data and judgment', 'Four outcomes: keep, refresh, consolidate, remove', 'Prioritize refreshes at positions 5 to 20']),
+      L('Refreshing and consolidating content', 9,
+        ['Refresh with real improvements', 'Merge overlapping pages with redirects', 'Track results'],
+        ['Refreshing means improving substance: updating facts, adding sections that competitors cover, replacing weak examples, improving structure and visuals, and checking links. Keep the URL. When consolidating, choose the strongest URL, move the best content into it, and 301 redirect the others.',
+         'Record the date and change for every update and review rankings and clicks after 4 to 8 weeks. A refresh that changes nothing meaningful is wasted effort.'],
+        ['Three posts on "email subject lines" (each at positions 15 to 30) become one definitive guide. The old URLs redirect to it. Three weeks later the combined page ranks in the top 5.'],
+        ['Find two pages competing for the same topic', 'Merge the best parts and redirect the weaker URL', 'Log the date and track changes'],
+        ['Refresh with real value', 'Consolidate and 301', 'Measure after weeks']),
+      L('Measuring content performance', 9,
+        ['Choose metrics by content goal', 'Attribute conversions', 'Report to stakeholders'],
+        ['Metrics must match the page\'s role. Awareness pages: impressions, clicks, new users. Consideration pages: engaged sessions, scroll depth, click-through to product pages. Decision pages: conversions and assisted conversions. Also track rankings for target terms and number of keywords each page ranks for.',
+         'Report trends, not single numbers: a quarterly view shows growth despite seasonality. Tie content to outcomes: "the guide cluster produced 340 trial signups, 22% of organic signups".'],
+        ['A report shows traffic to "what is" posts up 40%, but trial signups from organic are flat. Analysis reveals no links from those posts to the product; adding contextual CTAs lifts signups 18%.'],
+        ['Define a primary metric for three page types', 'Build a simple dashboard in Looker Studio or a spreadsheet', 'Add a conversion metric for each page group'],
+        ['Metrics must match goals', 'Use trends and attribution', 'Tie content to business outcomes'])
+    ], [
+      Q('Which pages are strong refresh candidates?', ['Pages at positions 5 to 20 with dated content', 'Pages already at position 1 that are perfect', 'Pages that are noindexed', 'Pages that have no content at all'], 0, 'They are close to improving ranking.'),
+      Q('What should you do when consolidating several pages into one?', ['Delete all of them quietly and publish a new page', 'Merge the best content and 301 the others', 'Add noindex to the strongest page', 'Duplicate the content onto every URL'], 1, 'Redirects preserve signals.'),
+      Q('Which metric best suits a decision-stage page?', ['Impressions only', 'Conversions', 'Number of headings', 'Page size'], 1, 'Decision pages exist to drive action.'),
+      Q('How soon should you judge a content refresh?', ['Immediately, as soon as you publish it', 'After about 4 to 8 weeks', 'Never, because refreshes cannot be measured', 'After about five years'], 1, 'Reindexing and ranking changes take time.'),
+      Q('When is removal (410) appropriate?', ['For pages with plenty of traffic and links', 'For pages with no traffic, links or value and no relevant target', 'For the homepage when it looks old', 'For every old page on the site'], 1, 'Removal suits pages with no value and no redirect target.')
+    ])
+  ]);
+})();

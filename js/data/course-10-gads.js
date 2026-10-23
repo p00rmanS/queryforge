@@ -1,0 +1,127 @@
+(function () {
+  var h = QF.h, L = h.L, S = h.S, Q = h.Q;
+  QF.addCourse({
+    slug: 'google-ads-fundamentals', title: 'Google Ads Fundamentals', subtitle: 'Account structure, campaign types, the auction and Quality Score, then launch your first campaign.',
+    track: 'SEM', topic: 'Google Ads', level: 'Beginner', instructor: 'dara', rating: 4.8,
+    desc: 'Pay-per-click advertising can deliver customers on day one, or burn a budget on day two. This course shows you how Google Ads is structured, how the auction decides who wins, what Quality Score really measures, and how to launch a Search campaign with sensible settings.',
+    learn: ['Structure an account with campaigns, ad groups and assets', 'Choose the right campaign type for a goal', 'Explain Ad Rank, the auction and Quality Score', 'Set up keywords, match types and negatives', 'Launch and monitor a first Search campaign'],
+    reqs: ['A website or landing page to send traffic to', 'No prior advertising experience needed']
+  }, [
+    S('Account structure and basics', [
+      L('How Google Ads is organized', 9,
+        ['Describe account, campaign, ad group and ad levels', 'Know where settings live', 'Design a clean structure'],
+        ['An account contains **campaigns**, which hold budget, bidding strategy, locations, languages and network settings. Campaigns contain **ad groups** (themes of keywords and ads), which contain keywords and ads (responsive search ads and their assets). Settings applied at the campaign level cascade down.',
+         'Structure by business logic: separate campaigns for different products, goals, locations or budgets. Within a campaign, group closely related keywords so ads can be highly relevant. Overly broad ad groups produce generic ads and low Quality Score; excessively fragmented structures starve automation of data.'],
+        ['A shoe shop creates campaigns for "Running", "Hiking" and "Brand". In Running, ad groups cover "trail running shoes" and "road running shoes". Each has its own ads and landing pages.'],
+        ['Draw your campaign/ad group tree on paper', 'Assign a budget to each campaign', 'Check each ad group has one clear theme'],
+        ['Campaign holds budget and targeting', 'Ad groups hold themes', 'Structure for relevance and enough data']),
+      L('Goals, budgets and the cost model', 9,
+        ['Define campaign goals', 'Understand CPC, CTR and conversion rate', 'Set a realistic budget'],
+        ['Start with a goal: sales, leads, calls or traffic. The platform optimizes towards that. Search advertising typically charges **cost per click (CPC)**. Key metrics: impressions, clicks, CTR, average CPC, conversions, conversion rate, cost per conversion (CPA) and return on ad spend (ROAS).',
+         'Budgets are daily averages; Google can spend up to twice the daily budget on a given day but not more than the monthly limit (daily budget x 30.4 days). Estimate need with: target conversions x expected CPA. With a $50 CPA target and 20 conversions per month, plan about $1,000 per month, plus a testing margin.'],
+        ['With an average CPC of $2 and a 5% conversion rate, cost per conversion is $2 / 0.05 = $40. If a lead is worth $200 to the business, there is room for profit.'],
+        ['Calculate your expected CPA from CPC and conversion rate', 'Set a monthly budget with a testing margin', 'Define the primary conversion'],
+        ['Goal first', 'CPA = CPC / conversion rate', 'Budget from target conversions']),
+      L('Networks, locations and settings that matter', 8,
+        ['Choose network settings', 'Target locations properly', 'Set schedules and devices'],
+        ['For a Search campaign, start with Google Search and consider turning off the Search Partners and Display Network options at first to concentrate spend and learn cleanly. Choose location targeting options carefully: "Presence" (people in the location) is usually safer than "Presence or interest", which can include people merely interested in a place.',
+         'Set languages to match your audience. Use ad schedules if your business can only handle calls at set times, and review device performance for bid adjustments after data accrues.'],
+        ['A local plumber targets only the service area with "Presence" targeting. Before the change, 20% of clicks came from people researching other cities.'],
+        ['Check network and location settings in your campaign', 'Switch to Presence targeting if appropriate', 'Set an ad schedule if needed'],
+        ['Concentrate spend at first', 'Presence targeting avoids waste', 'Match schedules to operations'])
+    ], [
+      Q('Which level holds the budget?', ['Ad group', 'Campaign', 'Keyword', 'Ad asset'], 1, 'Budget and many targeting settings are campaign level.'),
+      Q('CPA stands for:', ['Cost per acquisition', 'Clicks per ad', 'Cost per audience', 'Conversion per ad'], 0, 'It is the cost to acquire a conversion.'),
+      Q('If CPC is $2 and conversion rate is 5%, CPA is:', ['$10', '$20', '$40', '$100'], 2, '2 / 0.05 = 40.'),
+      Q('Which location option is generally safer for local services?', ['Presence', 'Presence or interest', 'Worldwide', 'Random'], 0, 'It targets people actually in the area.'),
+      Q('Overly broad ad groups lead to:', ['Highly relevant ads', 'Generic ads and weaker relevance', 'Lower budgets', 'Free clicks'], 1, 'Relevance suffers.')
+    ]),
+    S('Campaign types', [
+      L('Search, Display, Video, Shopping and Demand Gen', 10,
+        ['Match campaign types to goals', 'Understand where ads appear', 'Avoid the wrong type for the objective'],
+        ['**Search** shows text ads when people search, capturing existing demand. **Shopping** shows product listings with images and prices from your Merchant Center feed. **Display** shows banners across websites and apps, suited to awareness and remarketing. **Video** runs on YouTube. **Demand Gen** reaches people across YouTube, Discover and Gmail to create demand. **Performance Max** uses automation across all inventory.',
+         'For most businesses start with Search (and Shopping for retailers) because intent is highest. Add upper-funnel campaigns when you have budget and a measurement plan.'],
+        ['A furniture retailer runs Shopping and brand Search for conversions, remarketing on Display to visitors who did not purchase, and a YouTube campaign for a new collection launch.'],
+        ['List your goals and map each to a campaign type', 'Decide which two types to start with', 'Note the assets each requires'],
+        ['Search captures demand', 'Others create or remind', 'Start with highest-intent channels']),
+      L('Keywords and match types', 10,
+        ['Define broad, phrase and exact match', 'Select keywords to start', 'Understand how match types interact with automation'],
+        ['**Exact match** `[running shoes]` triggers on the same meaning. **Phrase match** `"running shoes"` triggers when the query includes the meaning of the phrase. **Broad match** `running shoes` can trigger on related searches and works best with smart bidding and good conversion tracking. Match types match meaning and intent, not just words.',
+         'A common modern approach: start with exact and phrase match for control, add broad match once conversions are tracked and negative keywords are in place. Review the Search terms report weekly to see what really triggered your ads.'],
+        ['The phrase match keyword `"trail running shoes"` may show for "best shoes for trail running" but not for "road running shoes".'],
+        ['Draft 15 keywords split across exact and phrase', 'Add 10 starter negatives', 'Plan to review search terms weekly'],
+        ['Match types match meaning', 'Broad match needs data and guardrails', 'Search terms report is essential']),
+      L('Responsive search ads and assets', 9,
+        ['Write RSAs', 'Use headlines and descriptions wisely', 'Add extensions (assets)'],
+        ['A responsive search ad takes up to 15 headlines (30 characters each) and 4 descriptions (90 characters each) and assembles combinations. Write headlines that vary: keyword, benefit, proof, offer and call to action. Pin only when legally required.',
+         'Add assets (formerly extensions): sitelinks, callouts, structured snippets, call, location and price. They increase ad size and relevance. Check Ad Strength as guidance but prioritize real message quality over a score.'],
+        ['Headlines: "Trail Running Shoes", "Free Returns for 60 Days", "Rated 4.8 by 2,000 Runners" (illustrative), "Shop the New Season". Descriptions cover shipping, fit guide and offer.'],
+        ['Write 12 headlines and 4 descriptions', 'Add 4 sitelinks with descriptions', 'Check for policy compliance'],
+        ['Vary headlines across themes', 'Use assets', 'Quality of message beats score'])
+    ], [
+      Q('Which campaign type captures existing demand best?', ['Search', 'Video awareness', 'Display only', 'None'], 0, 'People are actively searching.'),
+      Q('Shopping ads need:', ['A Merchant Center feed', 'A landing page only', 'No data', 'A YouTube channel'], 0, 'Product data feeds power shopping ads.'),
+      Q('Phrase match keyword triggers when:', ['Query includes the meaning of the phrase', 'Only exact text', 'Anything', 'Never'], 0, 'It matches the meaning with added words allowed.'),
+      Q('Maximum headlines in an RSA:', ['3', '10', '15', '30'], 2, 'Up to 15 headlines and 4 descriptions.'),
+      Q('Why review the search terms report?', ['To see what queries triggered ads and add negatives', 'To change the logo', 'To edit the site', 'To rename the account'], 0, 'It guides negatives and keyword expansion.')
+    ]),
+    S('The auction and Quality Score', [
+      L('Ad Rank and the auction', 10,
+        ['Describe Ad Rank', 'Explain actual CPC', 'Know the role of relevance'],
+        ['Each time a search happens, Google runs an auction among eligible ads. **Ad Rank** is determined by your bid, the quality of your ad and landing page (expected CTR, ad relevance, landing page experience), the thresholds, the context of the search, and the expected impact of assets and formats. Higher Ad Rank means a better position and often a lower price.',
+         'You do not pay your maximum bid; you pay the minimum needed to keep your position, approximately the Ad Rank of the ad below you divided by your quality, plus a small amount. This is why relevance can beat a larger budget.'],
+        ['Advertiser A bids $4 with excellent quality; Advertiser B bids $5 with poor quality. A can win the higher position while paying less per click than B.'],
+        ['Check which of your ads have below-average expected CTR', 'Note the three quality components', 'Plan one improvement for each'],
+        ['Ad Rank combines bid and quality', 'You pay the minimum to hold position', 'Relevance lowers costs']),
+      L('Quality Score demystified', 9,
+        ['Define Quality Score', 'Interpret the components', 'Use it as a diagnostic'],
+        ['Quality Score is a 1 to 10 diagnostic shown at keyword level, built from three components: expected CTR, ad relevance and landing page experience, each rated below average, average or above average. It is not used directly in the auction (real-time signals are), but it reflects those factors.',
+         'Use it to find weaknesses: low expected CTR means improve ad copy and match intent; low ad relevance means tighten ad groups and include the keyword themes in ads; low landing page experience means improve relevance, speed and clarity on the destination page. Do not optimize the score for its own sake.'],
+        ['A keyword shows Quality Score 4 with "below average" landing page experience. The page does not mention the product searched for. Creating a dedicated page lifts it to 7 and reduces CPC.'],
+        ['Add Quality Score columns to your keyword view', 'List keywords below 5 and the weak component', 'Make one improvement per keyword group'],
+        ['It is a diagnostic', 'Three components', 'Fix the weakest component']),
+      L('Bidding basics and negative keywords', 9,
+        ['Compare manual and automated bidding', 'Choose a starting strategy', 'Use negatives to protect budget'],
+        ['Manual CPC gives control but needs time. Automated bidding (Maximize clicks, Maximize conversions, Target CPA, Target ROAS) uses signals at auction time. New accounts without conversion data often start with Maximize conversions or Maximize clicks with a bid cap, then move to target-based bidding once there are enough conversions (a common guideline is 15 to 30 conversions in 30 days).',
+         'Negative keywords stop irrelevant searches: "free", "jobs", "diy" for a paid service, or product types you do not sell. Add at campaign level or in shared lists. Review search terms often.'],
+        ['After two weeks the search terms report shows clicks for "running shoes repair" and "running shoes jobs". Adding both as negatives prevents wasted spend.'],
+        ['Add 20 starter negatives', 'Choose a starting bid strategy and write why', 'Set a review date to switch strategy'],
+        ['Automation needs conversion data', 'Start simple', 'Negatives protect budget'])
+    ], [
+      Q('Ad Rank is influenced by:', ['Bid and quality components', 'Only budget', 'Only domain age', 'Only ad length'], 0, 'Bid and quality combine.'),
+      Q('Do you pay your maximum bid on every click?', ['Yes', 'No, only the minimum needed to hold position', 'Always double', 'Never pay'], 1, 'The auction sets actual CPC lower than the bid in many cases.'),
+      Q('Quality Score components are:', ['Expected CTR, ad relevance, landing page experience', 'Spend, clicks, color', 'CPM, CPV, CPA', 'Domain, hosting, SSL'], 0, 'These three are shown at keyword level.'),
+      Q('Quality Score is best viewed as:', ['A diagnostic', 'A direct auction input', 'A rank on Google search', 'A billing figure'], 0, 'Use it to find weaknesses.'),
+      Q('Negative keywords are used to:', ['Block irrelevant searches', 'Add new keywords', 'Change bids', 'Improve images'], 0, 'They protect budget.')
+    ]),
+    S('Launching your first campaign', [
+      L('Pre-launch checklist', 9,
+        ['Check tracking and policies', 'Review landing pages', 'Set expectations'],
+        ['Before launching, confirm: conversion tracking works, the landing page is fast, mobile friendly and matches the ad, ads comply with policies, billing is set up, and the location, language and network settings are correct. Set a learning-period expectation: automated strategies need days to stabilize.',
+         'Agree on success metrics, a review cadence (daily checks first week, then weekly), and budgets. Avoid changing many settings at once during the first two weeks; changes reset learning.'],
+        ['A pre-launch review finds the landing page form fails on mobile. Fixing it avoids paying for clicks that cannot convert.'],
+        ['Use the checklist on your campaign', 'Test conversion on a phone', 'Document success metrics'],
+        ['Test tracking and pages before spending', 'Allow learning time', 'Avoid constant changes']),
+      L('Monitoring and optimizing the first weeks', 10,
+        ['Know which reports to check', 'Make data-driven edits', 'Avoid overreacting'],
+        ['Key checks: spend vs budget, impressions and impression share, CTR, search terms, conversions and CPA, device and location splits, and disapprovals. Look at enough data before judging; 100 clicks per ad or keyword is a rough minimum for conclusions where conversion rates are modest.',
+         'Optimize in this order: fix tracking and disapprovals, add negatives, pause clear waste, test ad copy, improve landing pages, then adjust bids or targets. One change at a time makes learning clear.'],
+        ['After a week, three queries consumed 30% of spend with zero conversions. They are added as negatives and budget shifts to better terms.'],
+        ['Schedule weekly reviews', 'Create a change log', 'Review search terms and add negatives'],
+        ['Fix, prune, test, scale', 'Wait for enough data', 'Log changes']),
+      L('Scaling and next steps', 8,
+        ['Decide when to scale', 'Expand carefully', 'Plan learning goals'],
+        ['Scale when CPA or ROAS meets target consistently and impression share lost to budget is high. Increase budgets gradually (about 20% steps), expand keywords and add new ad groups, then test new campaign types.',
+         'Keep testing: ad copy, landing pages and audiences. Document learnings, and move to the advanced PPC course for bidding strategies, Performance Max and landing page optimization.'],
+        ['A campaign hitting a $35 CPA against a $50 target and losing 40% impression share to budget doubles its budget in two steps over two weeks while watching CPA.'],
+        ['Check impression share lost to budget', 'Plan a gradual increase', 'List three tests for next month'],
+        ['Scale on proven efficiency', 'Increase gradually', 'Keep testing'])
+    ], [
+      Q('Before launch you should:', ['Test conversion tracking and landing pages', 'Disable billing', 'Remove ads', 'Skip checks'], 0, 'Broken tracking wastes spend.'),
+      Q('Which should come first when optimizing?', ['Fix tracking and disapprovals', 'Increase bids', 'Change logo', 'Buy more traffic'], 0, 'Fundamentals first.'),
+      Q('Why change one thing at a time?', ['It makes learning clear', 'It is required by Google', 'It saves ink', 'It improves hosting'], 0, 'You can attribute results.'),
+      Q('A typical gradual budget increase is about:', ['5x at once', '20% steps', 'Zero', '100x'], 1, 'Gradual changes avoid disruption.'),
+      Q('Impression share lost to budget indicates:', ['Missed opportunity from limited budget', 'Broken tracking', 'Policy issues', 'Low quality'], 0, 'You could capture more if budget allowed.')
+    ])
+  ]);
+})();

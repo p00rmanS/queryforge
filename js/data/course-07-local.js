@@ -1,0 +1,127 @@
+(function () {
+  var h = QF.h, L = h.L, S = h.S, Q = h.Q;
+  QF.addCourse({
+    slug: 'local-seo', title: 'Local SEO & Google Business Profile', subtitle: 'Win the local pack: profile optimization, citations, reviews and location pages.',
+    track: 'SEO', topic: 'Local SEO', level: 'Beginner', instructor: 'lucia', rating: 4.8,
+    desc: 'For businesses that serve a physical area, local search is where customers are ready to call or visit. You will learn how the local pack ranks businesses, how to build a complete Google Business Profile, how to manage citations and reviews, and how to build location pages that rank.',
+    learn: ['Explain the three local ranking factors: relevance, distance and prominence', 'Set up and optimize a Google Business Profile', 'Build consistent citations (NAP) across the web', 'Earn, manage and respond to reviews', 'Create strong location and service-area pages'],
+    reqs: ['A real business or a case study business to practice on', 'Basic SEO knowledge helpful']
+  }, [
+    S('How local search works', [
+      L('Local pack and local ranking factors', 9,
+        ['Identify local SERP features', 'Define relevance, distance and prominence', 'Understand what you can influence'],
+        ['Local queries ("plumber near me", "dentist in Leeds") trigger the **local pack**: a map with three listings, plus map results and organic results. Google says local results are based mainly on three factors: **relevance** (how well a profile matches the search), **distance** (how far the business is from the searcher or specified location) and **prominence** (how well-known the business is, using reviews, links, citations and general web presence).',
+         'You cannot change distance, but you can influence relevance (accurate categories, services and content) and prominence (reviews, links, mentions). Because ranking varies by searcher location, grid-based rank trackers show how visibility changes across a city rather than a single number.'],
+        ['A dentist two miles from the city center will not outrank a closer competitor for center searches. But strong reviews and relevant services can win searches from nearby neighborhoods.'],
+        ['Search three local queries and screenshot the pack', 'Note which factors the top results seem to have', 'Identify one factor you can improve this month'],
+        ['Relevance, distance and prominence', 'Distance is fixed; the others are influenceable', 'Local visibility varies by location']),
+      L('Setting up Google Business Profile', 10,
+        ['Claim and verify a profile', 'Choose accurate categories', 'Complete every key field'],
+        ['Create or claim your profile at business.google.com and verify it (postcard, phone, video or email depending on the business). Choose the **primary category** carefully: it is among the strongest relevance signals. Add secondary categories only if they truly apply.',
+         'Fill every section: business name (the real name, no keyword stuffing, which violates guidelines), address or service area, phone, website, opening hours (including holidays), services, products, attributes, description and photos. Complete profiles get more interactions.'],
+        ['A locksmith changes the primary category from "Locksmith" to "Key duplication service" by mistake and loses visibility for emergency searches. Switching back restores it in a few weeks.'],
+        ['Verify access to your profile', 'Audit categories, hours and attributes', 'Add 10 recent authentic photos'],
+        ['Primary category matters', 'No keyword stuffing in the name', 'Complete profiles perform better']),
+      L('Service-area businesses and multi-location', 8,
+        ['Set service areas properly', 'Avoid spam practices', 'Manage multiple locations'],
+        ['A service-area business (SAB) visits customers rather than serving them at the premises; it can hide its address and list areas served. Do not create fake storefront addresses or virtual offices; Google suspends profiles for misrepresentation.',
+         'Multi-location businesses need one profile per genuine location, each with a unique local landing page, consistent naming and local phone numbers. Use bulk management tools for 10 or more locations.'],
+        ['A mobile dog groomer lists a 15-mile service area and hides the home address. A chain of six gyms gets six verified profiles linking to six unique location pages.'],
+        ['Check if your business qualifies as an SAB', 'Review guidelines for representing your business', 'List each location with its landing page'],
+        ['Follow Google\'s guidelines on addresses', 'One profile per genuine location', 'Unique landing pages for each'])
+    ], [
+      Q('Which are Google\'s local ranking factors?', ['Relevance, distance, prominence', 'Page speed, color and font', 'Backlinks only', 'Domain age only'], 0, 'Google officially names these three.'),
+      Q('Which local factor can you NOT directly change?', ['The number of reviews you earn', 'The categories chosen on the profile', 'Distance to the searcher', 'The photos uploaded to the profile'], 2, 'Distance depends on the searcher location.'),
+      Q('What is among the strongest relevance signals on a profile?', ['The primary category', 'Emoji added to the business name', 'The size of the cover photo', 'The day of the week the business opened'], 0, 'The primary category defines what the business is.'),
+      Q('Adding keywords to your business name:', ['Is encouraged because it helps relevance', 'Violates guidelines and risks suspension', 'Safely boosts ranking if done modestly', 'Is required for every profile'], 1, 'The name should be your real-world name.'),
+      Q('A service-area business should:', ['Invent a storefront address to look established', 'Hide address and list service areas', 'Delete the profile entirely', 'Use a P.O. box as a storefront'], 1, 'SABs can hide the address and set areas.')
+    ]),
+    S('Citations and NAP consistency', [
+      L('What citations are and why they matter', 8,
+        ['Define citation and NAP', 'Explain role in prominence', 'Differentiate structured and unstructured'],
+        ['A citation is a mention of your business name, address and phone number (NAP), on a directory, a website or a social profile. **Structured citations** appear in directories like Yelp or industry listings. **Unstructured** citations are mentions in articles, blogs and news. Consistent citations help engines confirm your business details and contribute to prominence.',
+         'Inconsistent details (old addresses, different phone numbers, variations in name) can confuse engines and customers. The impact of citations has declined relative to reviews and proximity, but they remain foundational, especially for new businesses.'],
+        ['A restaurant moved two years ago but eight directories still show the old address. Customers visit the wrong place and the listings contradict the profile; cleanup improves accuracy and reduces complaints.'],
+        ['Search your business name and phone number to find listings', 'Record each listing\'s NAP in a sheet', 'Highlight inconsistencies'],
+        ['Citations confirm business details', 'Consistency matters', 'Structured and unstructured both count']),
+      L('Building and cleaning citations', 9,
+        ['Prioritize the right directories', 'Fix duplicates', 'Maintain over time'],
+        ['Prioritize major data aggregators and platforms (Apple Business Connect, Bing Places, Facebook, Yelp, relevant national directories) and niche or local directories specific to your industry and region (chambers of commerce, trade associations). Choose quality over volume.',
+         'Fix inaccuracies on existing listings, claim unclaimed ones and remove duplicates. Use a spreadsheet or a citation tool to track URLs and logins. Review annually and after any change of address, phone or hours.'],
+        ['A law firm builds 25 high-quality citations including the bar association, a local chamber and legal directories. It skips 200 low-quality directories offered by a cheap bulk service.'],
+        ['Claim your Bing Places and Apple Business Connect listings', 'List 10 industry or local directories', 'Record all logins securely'],
+        ['Quality over volume', 'Clean duplicates', 'Update after changes']),
+      L('NAP on your own site and local schema', 8,
+        ['Display NAP clearly and consistently', 'Add LocalBusiness schema', 'Embed maps and directions'],
+        ['Display your NAP in the footer or contact page as crawlable text, not only an image. Match the format used in your profile. Add `LocalBusiness` structured data (or a more specific subtype such as `Dentist`) with name, address, phone, hours and geo-coordinates.',
+         'Embed a map and offer driving directions. Include opening hours and, for multi-location businesses, separate pages for each location with unique content and schema.'],
+        ['::{ "@context":"https://schema.org", "@type":"Dentist", "name":"Brightside Dental", "telephone":"+44 113 496 0123", "address":{"@type":"PostalAddress","streetAddress":"12 Park Row","addressLocality":"Leeds","postalCode":"LS1 5HD"} }', 'This sample uses fictional details to show the structure.'],
+        ['Check NAP text in the footer matches your profile exactly', 'Add LocalBusiness schema', 'Test it in the Rich Results Test or Schema Validator'],
+        ['NAP as crawlable text', 'LocalBusiness schema', 'Unique content per location'])
+    ], [
+      Q('NAP stands for:', ['Name, Address, Phone', 'New Area Page', 'Network Access Point', 'Name, Area, Price'], 0, 'It is the core identity data of a local business.'),
+      Q('Which is an unstructured citation?', ['A listing on a review directory such as Yelp', 'A mention in a local news article', 'A listing on Bing Places', 'An entry in an industry directory'], 1, 'Unstructured citations are mentions in text content.'),
+      Q('Which approach is preferable for citations?', ['Hundreds of low-quality directories', 'A smaller set of relevant, high-quality directories', 'No citations at all', 'Random lists found through search'], 1, 'Quality and relevance matter.'),
+      Q('How should you display NAP on your site?', ['As crawlable text matching other listings', 'Only inside an image so scrapers cannot copy it', 'Hidden from visitors in the page code', 'In a different format on each page'], 0, 'Consistent crawlable text supports verification.'),
+      Q('When should you review citations?', ['Never, because listings update themselves', 'After any change and at least annually', 'Every minute through an automatic tool', 'Only after Google issues a penalty'], 1, 'Details change; listings must follow.')
+    ]),
+    S('Reviews and reputation', [
+      L('Earning reviews ethically', 9,
+        ['Ask at the right moment', 'Use direct links', 'Avoid prohibited practices'],
+        ['Reviews influence both rankings (prominence) and customer decisions. Ask satisfied customers shortly after service via email, SMS or QR code, using your profile\'s direct review link. Make it easy: one tap, with a short personal request.',
+         'Never buy reviews, offer incentives for positive reviews, or "review gate" (only asking happy customers while discouraging unhappy ones). Google prohibits fake and incentivized reviews, and penalties include removal and profile suspension. Ask everyone, accept the result.'],
+        ['A physiotherapy clinic adds a QR code to appointment cards and sends an SMS after each visit. Reviews rise from 12 to 70 within five months, with 4.8 average and detailed comments.'],
+        ['Find your profile\'s review link', 'Draft a short request message', 'Choose a consistent moment to ask'],
+        ['Ask often and easily', 'No incentives or gating', 'Every genuine review counts']),
+      L('Responding to reviews', 8,
+        ['Reply to positive and negative reviews', 'Handle disputes calmly', 'Report policy violations'],
+        ['Respond to every review where practical. Thank positive reviewers and mention specifics; for negative ones, apologize, state facts calmly and offer to resolve offline. Responses are public and show potential customers how you treat people.',
+         'If a review violates policy (spam, conflict of interest, off-topic), flag it for removal; do not argue publicly. Do not reveal customer personal information in replies.'],
+        ['A restaurant answers a 2-star review: "Sorry the wait was long on Saturday. We were short-staffed. Please email us and we will make it right." The reviewer later updates to 4 stars.'],
+        ['Write response templates for positive and negative reviews', 'Respond to your last five reviews', 'Set a weekly review-monitoring routine'],
+        ['Reply with courtesy and facts', 'Flag policy violations', 'Protect privacy']),
+      L('Posts, Q&A, photos and messaging', 8,
+        ['Use profile features to engage', 'Post updates and offers', 'Maintain fresh photos'],
+        ['Profile features include posts, products, services, photos, Q&A and messaging (where available). Post updates, offers and events regularly. Upload fresh photos of the premises, team and work; profiles with many photos tend to receive more engagement.',
+         'Monitor questions and answer promptly. Seed your own FAQs by answering common questions from your own account, within the guidelines. Respond to messages quickly if enabled.'],
+        ['A florist uploads weekly photos of arrangements and posts seasonal offers. Calls from the profile increase 25% in two months.'],
+        ['Upload five new photos', 'Publish one update or offer', 'Review Q&A for unanswered questions'],
+        ['Fresh content signals activity', 'Photos influence engagement', 'Answer questions quickly'])
+    ], [
+      Q('Which practice is prohibited?', ['Asking customers to leave a review', 'Offering gifts for positive reviews', 'Replying to reviews publicly', 'Sending customers a direct review link'], 1, 'Incentivized reviews violate policies.'),
+      Q('What is review gating?', ['Asking only happy customers for reviews', 'Replying to every review that is left', 'Blocking spam reviews from appearing', 'Handing out QR codes that link to the review form'], 0, 'It selectively solicits reviews and is prohibited.'),
+      Q('Best response to a negative review:', ['Argue publicly about the facts', 'Apologize, address facts, and offer to resolve offline', 'Ignore it forever', 'Delete it yourself'], 1, 'Calm helpful responses help the reputation.'),
+      Q('A review that is spam should be:', ['Ignored', 'Flagged for removal', 'Answered with insults', 'Copied'], 1, 'Policy-violating content can be reported.'),
+      Q('Why upload photos regularly?', ['To increase engagement and show activity', 'Because Google deletes old photos monthly', 'To avoid receiving reviews', 'To change the profile\'s categories'], 0, 'Fresh photos support engagement.')
+    ]),
+    S('Local content and location pages', [
+      L('Location and service pages', 10,
+        ['Build unique location pages', 'Avoid doorway pages', 'Include local proof'],
+        ['A good location page includes the address, phone, hours, map, driving directions, services at that location, staff, local testimonials and photos. For service-area pages (e.g. "plumber in Bristol"), create them only where you actually serve and can provide unique, genuinely useful content.',
+         'Avoid doorway pages: near-identical pages with only the city name swapped. They add no value and risk demotion. Local proof such as case studies, nearby landmarks, local regulations or pricing differences makes pages unique.'],
+        ['A roofer\'s "Bristol" page lists completed projects in named neighborhoods, local building regulations, photographs and Bristol customer reviews; the "Bath" page has its own different content.'],
+        ['List the locations you want pages for', 'Gather unique facts and proof for each', 'Draft one location page using the template'],
+        ['Unique, useful pages per location', 'Avoid city-swapped doorway pages', 'Include local proof']),
+      L('Local links and community presence', 8,
+        ['Earn local links', 'Sponsor and partner', 'Create local content'],
+        ['Local links come from chambers of commerce, local news, charities, schools, event organizers and neighboring businesses. Sponsor a local team, host an event, or publish a local guide or data (e.g. "Average home prices by neighborhood").',
+         'Ask partners to link to your location page. Local relevance is a strong prominence signal that nationwide link campaigns cannot easily replicate.'],
+        ['A bakery sponsors a charity bake sale, gets coverage in the local paper and a link from the charity\'s sponsors page.'],
+        ['List 10 local organizations to engage', 'Plan one community activity', 'Pitch a local news story'],
+        ['Local links signal prominence', 'Community involvement helps', 'Use local data or guides']),
+      L('Measuring local SEO', 8,
+        ['Track profile insights', 'Use local rank tracking', 'Attribute calls and visits'],
+        ['Track profile performance: searches, views, calls, direction requests, website clicks, messages. Use UTM parameters on profile website links to separate profile traffic in analytics. Use call tracking carefully while keeping the main number consistent in the NAP.',
+         'Use a geo-grid rank tracker to see visibility across a service area. Combine with Search Console data for location pages. Report calls, form fills and visits to the business owner, not just rankings.'],
+        ['A report shows calls from the profile up 35% in three months, direction requests up 20%, and new leads from location pages up 18%.'],
+        ['Add UTM parameters to the profile website link', 'Record monthly profile metrics', 'Set up a simple local report'],
+        ['Track calls, directions and clicks', 'Use geo-grid tracking', 'Report business results'])
+    ], [
+      Q('A doorway page is:', ['A page with unique local proof and real detail', 'A near-duplicate page with only the city swapped', 'A contact page with a map', 'A sitemap file'], 1, 'They add no unique value and risk demotion.'),
+      Q('What should a location page include?', ['Only a list of keywords', 'Address, hours, map, services, and local proof', 'Nothing unique to that location', 'A paywall for visitors'], 1, 'These details make the page useful and unique.'),
+      Q('A good local link source is:', ['Local chamber of commerce or news site', 'A link farm that lists thousands of businesses', 'An anonymous forum with no moderation', 'A parked domain with no content'], 0, 'Local relevance supports prominence.'),
+      Q('UTM parameters on your profile link help to:', ['Increase the profile\'s ranking directly', 'Separate profile traffic in analytics', 'Remove negative reviews', 'Verify the business with Google'], 1, 'They tag the source for measurement.'),
+      Q('Which metric matters most to a local business owner?', ['Calls and leads', 'Number of headings', 'Meta description length', 'Alt text count'], 0, 'Business outcomes matter most.')
+    ])
+  ]);
+})();

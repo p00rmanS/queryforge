@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Queryforge | SEO and SEM courses</title>
+  <meta name="description" content="Queryforge teaches SEO and paid search from beginner to expert, with real lessons, worked examples and quizzes.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%2314213d'/%3E%3Ccircle cx='18' cy='18' r='9.5' fill='none' stroke='%23ffffff' stroke-width='3.2'/%3E%3Cpath d='M12.5 21l3.200-3.400 2.600 2.400 4.200-5.200' fill='none' stroke='%23ffe45e' stroke-width='2.400' stroke-linecap='round'/%3E%3Cpath d='M25.300 25.300L33 33' stroke='%23ffffff' stroke-width='3.600' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=20261023c">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap hdr">
+      <a class="brand" href="#/" aria-label="Queryforge home"><span id="logo-slot"></span><span class="brand-name">Queryforge</span></a>
+      <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"></button>
+      <nav id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#/courses" data-nav="courses">Courses</a></li>
+          <li><a href="#/paths" data-nav="paths">Paths</a></li>
+          <li><a href="#/glossary" data-nav="glossary">Glossary</a></li>
+          <li><a href="#/resources" data-nav="resources">Resources</a></li>
+          <li class="nav-user"><a href="#/dashboard" data-nav="dashboard" id="user-link">Dashboard</a></li>
+        </ul>
+      </nav>
+      <form class="hdr-search" role="search" data-form="search">
+        <label class="sr-only" for="hdr-q">Search courses and lessons (press / to focus)</label>
+        <input id="hdr-q" name="q" type="search" placeholder="Search" autocomplete="off">
+        <button type="submit" aria-label="Search"></button>
+      </form>
+      <button class="icon-btn" id="theme-btn" type="button" data-action="toggle-theme" aria-pressed="false"></button>
+    </div>
+  </header>
+
+  <p class="storage-note" id="storage-note" hidden>Your browser is blocking local storage, so progress will not be kept after you close this tab.</p>
+  <main id="main"></main>
+
+  <footer class="site-footer">
+    <div class="wrap foot">
+      <div class="foot-brand"><span id="foot-logo"></span><div><b>Queryforge</b><p>Practical SEO and SEM training.</p></div></div>
+      <nav aria-label="Footer"><ul>
+        <li><a href="#/courses">Courses</a></li><li><a href="#/paths">Learning paths</a></li><li><a href="#/glossary">Glossary</a></li><li><a href="#/resources">Resources</a></li><li><a href="#/dashboard">Dashboard</a></li>
+      </ul></nav>
+      <p class="fine">&copy; <span id="year"></span> Queryforge. A demo platform: instructors, ratings, reviews and testimonials are fictional sample content, enrollment and sign-in are simulated, and certificates are not accredited credentials. Search engine features change; verify against official documentation.</p>
+    </div>
+  </footer>
+
+  <dialog id="auth" aria-labelledby="auth-h">
+    <form method="dialog">
+      <h2 id="auth-h">Sign in</h2>
+      <p class="muted">This is a mock sign-in. There is no password or server; your name is stored in this browser and printed on certificates.</p>
+      <div class="field"><label for="a-name">Name</label><input id="a-name" name="name" type="text" required autocomplete="name"></div>
+      <div class="field"><label for="a-email">Email</label><input id="a-email" name="email" type="email" required autocomplete="email"></div>
+      <div class="actions"><button class="btn btn-primary" type="submit">Continue</button><button class="btn btn-ghost" type="button" data-close>Cancel</button></div>
+    </form>
+  </dialog>
+
+  <div id="live" class="sr-only" aria-live="polite" role="status"></div>
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="js/data/helpers.js?v=20261023c"></script>
+  <script src="js/data/course-01-fundamentals.js?v=20261023c"></script>
+  <script src="js/data/course-02-keywords.js?v=20261023c"></script>
+  <script src="js/data/course-03-onpage.js?v=20261023c"></script>
+  <script src="js/data/course-04-technical.js?v=20261023c"></script>
+  <script src="js/data/course-05-content.js?v=20261023c"></script>
+  <script src="js/data/course-06-links.js?v=20261023c"></script>
+  <script src="js/data/course-07-local.js?v=20261023c"></script>
+  <script src="js/data/course-08-ai-search.js?v=20261023c"></script>
+  <script src="js/data/course-09-analytics.js?v=20261023c"></script>
+  <script src="js/data/course-10-gads.js?v=20261023c"></script>
+  <script src="js/data/course-11-ppc.js?v=20261023c"></script>
+  <script src="js/data/course-12-cro.js?v=20261023c"></script>
+  <script src="js/data/course-13-msads.js?v=20261023c"></script>
+  <script src="js/data/course-14-internet-zero.js?v=20261023c"></script>
+  <script src="js/data/course-15-math-marketing.js?v=20261023c"></script>
+  <script src="js/data/course-16-writing.js?v=20261023c"></script>
+  <script src="js/data/course-17-toolbox.js?v=20261023c"></script>
+  <script src="js/data/course-18-clients.js?v=20261023c"></script>
+  <script src="js/data/course-19-client-qa.js?v=20261023c"></script>
+  <script src="js/data/course-20-ecommerce.js?v=20261023c"></script>
+  <script src="js/data/course-21-international.js?v=20261023c"></script>
+  <script src="js/data/course-22-migrations.js?v=20261023c"></script>
+  <script src="js/data/course-23-ppc-clients.js?v=20261023c"></script>
+  <script src="js/data/course-24-ethics.js?v=20261023c"></script>
+  <script src="js/data/course-25-audits.js?v=20261023c"></script>
+  <script src="js/data/course-26-ga4-gtm.js?v=20261023c"></script>
+  <script src="js/data/course-27-platforms.js?v=20261023c"></script>
+  <script src="js/data/course-28-channels.js?v=20261023c"></script>
+  <script src="js/data/course-29-career.js?v=20261023c"></script>
+  <script src="js/data/course-30-capstone.js?v=20261023c"></script>
+  <script src="js/data/meta.js?v=20261023c"></script>
+  <script src="js/data/meta-extra.js?v=20261023c"></script>
+  <script src="js/core.js?v=20261023c"></script>
+  <script src="js/views.js?v=20261023c"></script>
+  <script src="js/main.js?v=20261023c"></script>
+</body>
+</html>

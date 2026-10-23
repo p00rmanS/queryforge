@@ -1,0 +1,127 @@
+(function () {
+  var h = QF.h, L = h.L, S = h.S, Q = h.Q;
+  QF.addCourse({
+    slug: 'link-building', title: 'Link Building & Digital PR', subtitle: 'Earn links that matter: link quality, digital PR, outreach and staying out of penalty territory.',
+    track: 'SEO', topic: 'Link Building', level: 'Intermediate', instructor: 'priya', rating: 4.6,
+    desc: 'Links remain one of the most important ways search engines judge authority. This course teaches you how to evaluate link quality, create assets worth linking to, run digital PR campaigns and outreach that gets replies, and avoid practices that violate Google\'s link spam policies.',
+    learn: ['Evaluate the quality and risk of a link', 'Create linkable assets and angles', 'Run outreach that earns replies', 'Plan a digital PR campaign', 'Recognize and avoid link spam and penalties'],
+    reqs: ['On-page SEO basics', 'Willingness to do outreach and communicate with real people']
+  }, [
+    S('Link fundamentals and quality', [
+      L('How links work as a signal', 9,
+        ['Describe how links pass authority', 'Explain anchor text and link attributes', 'Understand why quality beats quantity'],
+        ['A link from another site is treated as a recommendation. Search engines use link analysis to estimate which pages are important and relevant; PageRank was the original method and links remain a key signal. The more trustworthy and relevant the linking page, the more valuable the link.',
+         'Link attributes tell crawlers how to treat the link: `rel="nofollow"` (no endorsement implied), `rel="sponsored"` for paid or affiliate links, and `rel="ugc"` for user-generated content. Google treats these as hints. Anchor text gives context, but over-optimized exact-match anchors across many links looks manipulative.'],
+        ['One editorial link from a respected industry publication can outweigh hundreds of directory or forum-profile links. The publication has real readers, editorial standards and its own authority.'],
+        ['Pull your backlink profile from Search Console (Links report)', 'List your top 10 linking domains', 'Note anchor text patterns'],
+        ['Links are endorsements', 'Relevance and trust matter most', 'Use correct rel attributes for paid and user-generated links']),
+      L('Judging link quality', 10,
+        ['Use a checklist for link evaluation', 'Interpret authority metrics carefully', 'Identify low-quality sources'],
+        ['Questions to ask about a potential linking site: Is it relevant to my topic? Does it have real organic traffic and an engaged audience? Is the link editorial, placed in context? Does the site link out to spammy neighbors? Third-party authority scores (DR, DA, Authority Score) are estimates by vendors, useful for comparing but not used by Google.',
+         'Warning signs: sites selling guest posts openly on every topic, link networks, thin content full of outbound links, foreign-language pages unrelated to the niche, and sites that lost their organic traffic. If a site would be worth getting a link from even without SEO value, it is probably a good one.'],
+        ['Two prospects: a regional newspaper with 50k monthly organic visits and a "write for us" blog accepting any topic with DR 60 but declining traffic. The newspaper link is more valuable and safer.'],
+        ['Create a link-quality checklist with 8 questions', 'Score five of your existing links', 'Flag any you would not want to be associated with'],
+        ['Metrics are estimates, not truth', 'Traffic, relevance and editorial placement matter', 'Avoid link-selling networks']),
+      L('Competitor backlink analysis', 9,
+        ['Find where competitors earn links', 'Identify repeatable tactics', 'Prioritize realistic targets'],
+        ['Use a backlink tool to list the referring domains of competitors. Sort by those that link to several competitors but not you; these are strong prospects because they clearly cover your space. Look at which of their pages attract links: studies, tools, guides and press coverage often win.',
+         'Categorize sources (editorial, resource pages, directories, partners, press) and decide which are replicable. Make a prospect list with contact details, priority and angle. Do not spend time on links you could not earn legitimately.'],
+        ['A tool shows three competitors all earn links from a state tourism board\'s resource page. Your site qualifies and a short outreach email gets you listed.'],
+        ['Select three competitors and export referring domains', 'Find domains linking to at least two of them but not you', 'Choose ten realistic targets'],
+        ['Link intersect finds proven prospects', 'Study which assets attract links', 'Prioritize what is replicable'])
+    ], [
+      Q('What does rel="sponsored" mark?', ['Links within your own website', 'Paid or affiliate links', 'Broken links that return 404', 'Image files used on the page'], 1, 'Sponsored marks links that are paid or part of advertising agreements.'),
+      Q('Which is typically most valuable?', ['A relevant editorial link from a respected site', 'Links in forum signatures', 'Hundreds of directory listings', 'Automated comment spam links'], 0, 'Relevance, trust and editorial placement matter.'),
+      Q('Third-party authority metrics (DR, DA) are:', ['Used by Google directly', 'Vendor estimates', 'Official Google scores', 'Meta tags'], 1, 'They are proprietary approximations.'),
+      Q('A link intersect analysis finds:', ['Sites linking to competitors but not you', 'Your slowest pages across the site', 'Duplicate titles on your templates', 'Oversized images that need compressing'], 0, 'They are proven, relevant prospects.'),
+      Q('A warning sign of a poor link source is:', ['A real audience that reads the site', 'Openly selling guest posts on any topic', 'Visible editorial standards', 'Content relevant to your topic'], 1, 'Pay-to-post sites on all topics often have poor quality.')
+    ]),
+    S('Digital PR and linkable assets', [
+      L('Creating linkable assets', 10,
+        ['List asset types that attract links', 'Pick an asset by audience need', 'Make assets credible'],
+        ['Assets that earn links tend to give others something to cite or use: original research and surveys, data visualizations, free tools and calculators, comprehensive guides, templates, glossaries and industry benchmarks. Journalists and bloggers link to sources that provide facts and authority.',
+         'Credibility matters: use clear methodology, a reasonable sample size, transparent sources and professional presentation. Provide embeddable charts and downloadable data, and make the headline finding obvious.'],
+        ['A payroll software company surveys 1,000 small business owners on late payments and publishes "State of Late Payments" with 12 charts and a press summary. It earns links from business media and blogs for years.'],
+        ['Brainstorm five asset ideas for your niche', 'Check whether similar assets already earn links', 'Choose one and outline methodology'],
+        ['Assets that provide data or utility earn links', 'Credibility needs clear methods', 'Make it easy to cite']),
+      L('Planning a digital PR campaign', 10,
+        ['Find newsworthy angles', 'Build a media list', 'Time and package the pitch'],
+        ['Digital PR earns links by getting coverage in news and industry publications. A newsworthy angle usually has one of: novelty, relevance to current events, conflict, human interest, or a surprising number. Localize stories to regions to reach local media.',
+         'Build a targeted media list of journalists who cover your topic, using their recent articles as evidence. Prepare a press kit: headline findings, quotes, images, data download and an expert spokesperson. Pitch with a short subject line and tailored first lines.'],
+        ['A travel site analyzes flight prices to find the cheapest day to book each month, then creates regional versions for local newspapers. Each local outlet receives a story about its own airports.'],
+        ['Write three headline angles for your asset', 'Build a list of 20 relevant journalists', 'Draft a one-page press summary'],
+        ['Angles make stories newsworthy', 'Target journalists carefully', 'Prepare a press kit']),
+      L('Reactive PR and expert sourcing', 8,
+        ['Respond to journalist requests', 'Position yourself as an expert source', 'Maintain relationships'],
+        ['Reactive PR means responding to requests and trending stories. Platforms where journalists post expert requests, and social search for journalist queries, offer opportunities to contribute quotes and earn mentions and links. Speed and relevance are essential; reply within hours with a concise, quotable answer.',
+         'Offer unique insight rather than generic statements. Build relationships by being reliable and accurate, and without demanding links. A reputation as a helpful expert brings repeat requests.'],
+        ['A journalist asks for tips on negotiating salary. A recruiter replies in 20 minutes with three concrete tactics and a data point from placements and is quoted with a link.'],
+        ['Pick one expert in your company and list topics they can comment on', 'Monitor journalist requests for a week', 'Send one tailored reply'],
+        ['Speed and relevance win', 'Provide unique insight', 'Relationships create repeat opportunities'])
+    ], [
+      Q('Which asset is likely to earn links?', ['Original survey data with clear methodology', 'A copy of a competitor\'s text', 'A keyword-stuffed page', 'A blank placeholder page'], 0, 'Original data provides something citable.'),
+      Q('What is a common newsworthy element?', ['Novelty or a surprising number', 'Long paragraphs of dense text', 'A larger number of keywords', 'Hidden text on the page'], 0, 'Surprising data and novelty attract coverage.'),
+      Q('What belongs in a press kit?', ['Findings, quotes, images and data download', 'Login passwords for the site', 'Only a company logo', 'Nothing at all'], 0, 'It helps journalists quickly build a story.'),
+      Q('For reactive PR, response speed should be:', ['Within hours', 'Within months', 'Irrelevant', 'After publication'], 0, 'Journalists work to tight deadlines.'),
+      Q('The best approach to journalists is:', ['Demand a link in the first message', 'Be helpful, accurate and relevant', 'Send the same message to every journalist', 'Ignore replies you do not like'], 1, 'Trust and usefulness build relationships.')
+    ]),
+    S('Outreach', [
+      L('Prospecting and personalization', 9,
+        ['Build a qualified prospect list', 'Find contact details', 'Personalize authentically'],
+        ['A prospect list should include the site, the page you want a link on, why it is relevant, and the right contact (editor, author or site owner). Qualify with the quality checklist before reaching out; a small list of relevant targets beats a huge list of weak ones.',
+         'Find contacts from author pages, About pages and professional networks; verify addresses with a checker. Personalization means referencing the person\'s actual work and explaining why your resource helps their audience, not inserting a first name into a template.'],
+        ['Instead of "Hi, I love your site," an outreach opens: "Your guide to trail safety mentions the 2019 park closure; we have just published updated maps showing the new routes." It shows genuine reading and relevance.'],
+        ['Build a prospect sheet with 20 rows and required columns', 'Verify 10 contacts', 'Write a personalized first line for each'],
+        ['Quality over quantity', 'Verify contacts', 'Personalize with real knowledge']),
+      L('Writing outreach emails', 10,
+        ['Structure a concise email', 'Craft subject lines', 'Follow up politely'],
+        ['Good outreach is short: why you are writing, what you offer, why it benefits their readers, and a clear, low-friction ask. Keep under 120 words. Write a subject line that is specific and honest; avoid "Quick question" tricks.',
+         'Send one or two follow-ups spaced several days apart, each adding value or a new angle. Respect no responses and unsubscribes. Track opens, replies and outcomes to refine your approach; typical link outreach reply rates are low, so improving targeting matters more than volume.'],
+        ['::Subject: Updated data for your trail safety guide', '::', '::Hi Priya, I read your trail safety guide - the section on winter conditions is useful. We published a dataset of 2025 closures that updates the stats you cite. Happy to share the charts if useful. - Sam', 'Short, specific and helpful.'],
+        ['Draft an outreach email under 120 words', 'Write two subject line options', 'Plan a follow-up with a new angle'],
+        ['Be concise and relevant', 'Honest subject lines', 'Follow up politely, then stop']),
+      L('Other link tactics: broken links, resource pages and partnerships', 9,
+        ['Use broken link building', 'Get listed on resource pages', 'Earn links via partnerships'],
+        ['Broken link building: find dead links on relevant pages (using a crawler or browser extension) and offer your resource as a replacement. Resource pages curate links on a topic; suggest your content if it fits. Partnerships, sponsorships of real events and community involvement create natural mentions.',
+         'Be honest: if your content is not a good fit, do not pitch it. Unlinked brand mentions are an easy win: find them and ask the publisher to add a link.'],
+        ['A guide on tenant rights links to a government PDF that now returns 404. A site owner replaces it with your updated guide after a short email pointing out the broken link.'],
+        ['Find three resource pages in your niche', 'Check for broken links on them', 'Set up alerts for unlinked brand mentions'],
+        ['Helpful tactics fix real problems', 'Pitch only genuine fits', 'Convert unlinked mentions'])
+    ], [
+      Q('Best outreach email length?', ['Over 500 words with the full company history', 'Short, about 120 words or fewer', 'A subject line with no message', 'A single emoji'], 1, 'Short emails respect the recipient\'s time.'),
+      Q('Real personalization means:', ['Inserting the recipient\'s first name and nothing else', 'Referencing their actual work and relevance', 'Sending the same text to everyone', 'Offering money for a link'], 1, 'Specificity shows genuine effort.'),
+      Q('Broken link building involves:', ['Finding dead links and offering a replacement', 'Breaking links on a competitor\'s site yourself', 'Buying expired domains for their old links', 'Hiding links in the footer'], 0, 'It solves a real problem for the site owner.'),
+      Q('How should you treat unlinked mentions?', ['Ignore them because they have no value', 'Ask politely for a link', 'Report them to Google as spam', 'Delete the pages that mention you'], 1, 'They are warm opportunities.'),
+      Q('What is best practice about follow-ups?', ['Send a follow-up every day until they reply', 'One or two spaced follow-ups with value', 'Never follow up at all', 'Threaten to remove the content'], 1, 'Polite limited follow-ups are fine.')
+    ]),
+    S('Risk, penalties and link hygiene', [
+      L('Link spam policies', 9,
+        ['Recognize manipulative tactics', 'Know the policy basics', 'Understand algorithmic vs manual actions'],
+        ['Google\'s link spam policies prohibit links intended to manipulate rankings: buying or selling links that pass ranking credit without proper attributes, excessive link exchanges, large-scale guest posting campaigns with keyword-rich anchors, automated link creation, and private blog networks. SpamBrain and other systems neutralize many spammy links automatically.',
+         'Penalties are either **algorithmic** (links simply stop counting or rankings fall) or **manual actions** (a human reviewer applies a penalty, reported in Search Console). Most sites never receive manual actions; wasted effort on links that no longer count is the more common cost.'],
+        ['A site buys 300 guest posts with exact-match anchors from a network. A spam update neutralizes the links, and rankings drop back to pre-campaign levels, plus the budget is lost.'],
+        ['Read Google\'s link spam policies', 'List any tactics you currently use that might violate them', 'Check Manual Actions in Search Console'],
+        ['Do not manipulate rankings with links', 'Penalties can be algorithmic or manual', 'Most spam links are simply ignored']),
+      L('Auditing and the disavow tool', 9,
+        ['Audit a backlink profile', 'Know when to disavow', 'Remove or fix harmful links'],
+        ['Audit referring domains for spammy patterns: large clusters of exact-match anchors, irrelevant foreign sites, and previous paid link campaigns. Google says it ignores most spammy links, so the disavow tool is for specific situations: a manual action related to links, or clear evidence of a past paid scheme you cannot remove.',
+         'Try to remove links first by contacting site owners. If disavowing, submit a clean text file of domains. Disavowing random "toxic" scores from tools wastes effort and can discard useful links.'],
+        ['After inheriting a site with a manual action for unnatural links, an SEO documents removal requests, submits a disavow file for domains that did not respond and a reconsideration request.'],
+        ['Check for sudden link spikes in your profile', 'Review manual actions', 'Write down your rule for when to disavow'],
+        ['Disavow is a last resort', 'Remove links first when possible', 'Ignore generic toxicity scores']),
+      L('Building a sustainable link program', 9,
+        ['Set realistic targets', 'Diversify tactics and anchors', 'Measure impact'],
+        ['A sustainable program mixes assets, PR, partnerships and outreach, producing a natural profile of branded, URL and descriptive anchors. Set goals based on referring domains from relevant, quality sites and on ranking and traffic outcomes, not raw link counts.',
+         'Measure links earned per campaign, the pages they point to, the ranking movement of those pages, and the revenue the traffic generates. Review quarterly and drop tactics that do not deliver.'],
+        ['A campaign earns 18 links from 12 domains, mostly to a guide and a tool. Rankings for 30 related terms improve by an average of 4 positions, and organic signups rise 12% over three months.'],
+        ['Set a quarterly target of referring domains from relevant sites', 'Track pages receiving links and their rankings', 'Review which tactic produced the best results'],
+        ['Diversify tactics', 'Measure outcomes not counts', 'Review and refine regularly'])
+    ], [
+      Q('A manual action is applied by:', ['An algorithm only, with no human involved', 'A human reviewer at Google', 'The site owner who submitted it', 'A web browser'], 1, 'Manual actions are reported in Search Console.'),
+      Q('Which tactic violates link spam policies?', ['Earning links through original research', 'Buying links that pass ranking credit', 'Linking to sources', 'Press coverage'], 1, 'Paid links without proper attributes are against policies.'),
+      Q('When is the disavow tool most appropriate?', ['For any link from a low-authority site', 'For manual actions or clear paid-link schemes you cannot remove', 'As weekly routine maintenance', 'As a way to raise rankings'], 1, 'It is a last resort.'),
+      Q('What should you try before disavowing?', ['Nothing, because disavowing always comes first', 'Contacting site owners to remove links', 'Buying more links to dilute them', 'Deleting your own website'], 1, 'Removal is preferred where possible.'),
+      Q('The best way to measure link building is:', ['The raw count of new links gained', 'Relevant referring domains plus ranking and revenue impact', 'The number of outreach emails sent', 'The page weight of the linked pages'], 1, 'Outcomes matter more than counts.')
+    ])
+  ]);
+})();

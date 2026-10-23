@@ -1,0 +1,105 @@
+(function () {
+  var h = QF.h, L = h.L, S = h.S, Q = h.Q;
+  QF.addCourse({
+    slug: 'seo-analytics', title: 'SEO Analytics & Reporting', subtitle: 'Search Console, GA4, rank tracking and reports that executives actually read.',
+    track: 'SEO', topic: 'Analytics', level: 'Intermediate', instructor: 'noor', rating: 4.7,
+    desc: 'Measurement turns SEO from guesswork into a discipline. You will master the Search Console Performance report, set up GA4 for organic reporting, track rankings sensibly, and build reports that connect search activity to business results.',
+    learn: ['Analyze queries, pages and CTR in Search Console', 'Configure GA4 events and key events for SEO reporting', 'Track rankings without being fooled by personalization', 'Build dashboards in Looker Studio', 'Tell a clear story: insight, action, result'],
+    reqs: ['SEO fundamentals', 'Access to Search Console and GA4 (or demo data)']
+  }, [
+    S('Google Search Console', [
+      L('The Performance report', 10,
+        ['Read clicks, impressions, CTR and position', 'Filter by query, page, country and device', 'Understand data limits'],
+        ['The Performance report shows how your site appears in Google Search. **Clicks** are visits from results, **impressions** are times a result was shown, **CTR** is clicks divided by impressions, and **average position** is the mean of the highest position of your site each time it appeared. Data is retained for 16 months, so export regularly for longer history.',
+         'Use filters to compare: query contains "pricing", page contains "/blog/", device mobile vs desktop, and date ranges year over year. Remember that some rare queries are anonymized and omitted from the query list, so totals by query may be lower than total clicks. Average position is an aggregate and can mislead when a page ranks for many queries.'],
+        ['Filtering to the page `/pricing/` shows queries "[brand] pricing" (CTR 45%, position 1) and "[category] software cost" (CTR 1.2%, position 9). The second represents an opportunity to improve the snippet and the content.'],
+        ['Compare the last 3 months with the previous period', 'Export top queries and pages', 'Find three pages with high impressions and low CTR'],
+        ['Four core metrics', '16 months of data, export to keep', 'Compare periods and segment']),
+      L('Indexing, experience and enhancement reports', 9,
+        ['Use the Pages report', 'Read Core Web Vitals and enhancements', 'Handle manual actions and security issues'],
+        ['The **Pages** (indexing) report lists which URLs are indexed and why others are not, such as "Crawled - currently not indexed", "Discovered - currently not indexed", "Duplicate without user-selected canonical" or "Excluded by noindex". Investigate unexpected exclusions and verify with URL Inspection.',
+         'Other reports include Core Web Vitals, HTTPS, breadcrumbs and product snippets, plus Manual Actions and Security Issues. Set email notifications so problems reach you. When you fix an issue, use "Validate fix" and monitor.'],
+        ['A spike of "Crawled - currently not indexed" on tag pages suggests low-value pages. The team noindexes thin tag archives and improves internal linking to key content.'],
+        ['Open the Pages report and note the top reasons for non-indexing', 'Check Core Web Vitals groups', 'Confirm notification settings'],
+        ['Read the reasons for non-indexing', 'Validate fixes', 'Enable notifications']),
+      L('URL Inspection, sitemaps and links reports', 9,
+        ['Inspect a URL live', 'Submit and monitor sitemaps', 'Use the Links report'],
+        ['URL Inspection shows the indexed version and lets you test the live URL, view the rendered page and request indexing. Requesting indexing is a nudge, not a guarantee, and is quota-limited.',
+         'Submit sitemaps under Sitemaps and monitor "discovered URLs". The Links report lists top linked pages, external linking sites and internal links; use it for quick link insights. Settings include Crawl Stats, which reveal crawl requests by response and file type.'],
+        ['After launching a redesign, the team inspects 10 key URLs, views rendered HTML for missing content and checks Crawl Stats for increased 5xx errors.'],
+        ['Inspect your five most important URLs', 'Submit or verify your sitemap', 'Check Crawl Stats'],
+        ['Use live tests to debug', 'Indexing requests are a nudge', 'Crawl Stats reveal server issues']),
+      L('Finding opportunities with Search Console', 9,
+        ['Identify quick wins', 'Spot cannibalization', 'Track the impact of changes'],
+        ['Quick-win filters: queries at positions 8 to 20 with high impressions, pages with high impressions but low CTR, and queries where a page ranks that does not match the topic. For cannibalization, filter by a query and look at the Pages tab: if multiple URLs share impressions, consider consolidating.',
+         'Annotate changes (a simple log with dates). Use the compare feature to examine before and after, remembering seasonality and unrelated updates.'],
+        ['The query "invoice template" shows three URLs sharing impressions. Merging them into one strong page lifts its average position from 9 to 4.'],
+        ['Create a list of 20 queries at position 8 to 20', 'Check each for cannibalization', 'Plan updates and log them'],
+        ['Look for positions 8-20', 'Use Pages tab per query', 'Annotate changes'])
+    ], [
+      Q('How long does Search Console retain Performance data?', ['Only 7 days', '16 months', '5 years', 'Forever'], 1, 'Export to keep longer history.'),
+      Q('CTR is calculated as:', ['Clicks divided by impressions', 'Impressions divided by clicks', 'Position divided by clicks', 'Clicks times position'], 0, 'CTR = clicks / impressions.'),
+      Q('Which report shows why URLs are not indexed?', ['Pages (indexing) report', 'The Links report', 'The Settings area', 'The Sitemaps report'], 0, 'It lists exclusion reasons.'),
+      Q('Requesting indexing in URL Inspection:', ['Guarantees the page will be indexed', 'Is a nudge, not a guarantee', 'Deletes the page from the index', 'Changes the page\'s ranking'], 1, 'Google decides whether to index.'),
+      Q('To check cannibalization for a query:', ['Filter by the query, view the Pages tab', 'Check the page speed report', 'View the Crawl Stats report', 'Inspect the robots.txt file'], 0, 'Multiple URLs sharing impressions indicate overlap.')
+    ]),
+    S('Google Analytics 4 for SEO', [
+      L('GA4 basics: events, users and sessions', 9,
+        ['Understand the event-based model', 'Know key terms', 'Spot sampling and thresholds'],
+        ['GA4 records everything as **events** (page_view, scroll, click, purchase). Sessions are groups of events. **Key events** (formerly conversions) are the events you flag as important. Engagement metrics include **engaged sessions** (lasting longer than 10 seconds, having a key event, or at least two page views) and engagement rate, which replaced bounce rate as the default, although bounce rate is available again as the inverse.',
+         'Universal Analytics stopped processing data in July 2023, so GA4 is the standard now. Reports can show thresholding when data is small, and some data is estimated if consent mode is used. Always check how a metric is defined before comparing across tools.'],
+        ['A blog page has 1,000 sessions and 620 engaged sessions, an engagement rate of 62%. The product page has 200 sessions, 40 with a "generate_lead" key event: 20% of sessions converted.'],
+        ['Open the Events report and list your top 10 events', 'Mark lead or purchase events as key events', 'Check data retention settings'],
+        ['GA4 is event-based', 'Key events are your goals', 'Engagement rate replaces bounce rate by default']),
+      L('Setting up key events and organic reporting', 10,
+        ['Define key events', 'Segment organic traffic', 'Build landing page reports'],
+        ['Decide what counts: form submissions, purchases, phone-call clicks, signups. Implement through GTM or built-in enhanced measurement, then flag as key events. Test using DebugView before relying on data.',
+         'To see organic search: Reports > Acquisition > Traffic acquisition with the "Session default channel group" = Organic Search. For SEO landing page reports, use Engagement > Landing page and add a filter for organic search. Link Search Console to GA4 to see query and landing page data in one place.'],
+        ['A landing page report shows 5,000 organic sessions to `/guides/seo-audit` with an engagement rate of 71% but 0.3% key event rate. Adding a relevant CTA and lead magnet lifts key events to 1.8%.'],
+        ['Link Search Console to GA4', 'Create a landing page report filtered to organic', 'Verify one key event in DebugView'],
+        ['Define and test key events', 'Filter to Organic Search', 'Link Search Console']),
+      L('Attribution and caveats for organic traffic', 8,
+        ['Understand attribution differences', 'Account for dark traffic', 'Report honestly'],
+        ['GA4 offers data-driven and last-click attribution models in reports. Organic search often assists conversions earlier in the journey, so also look at assisted conversion paths. Some organic visits are mislabeled as direct due to missing referrers (apps, secure links), so total organic is likely understated.',
+         'Consent banners reduce measured traffic where users decline analytics. Explain these limits in reports, and triangulate with Search Console clicks, server logs and CRM data.'],
+        ['Search Console reports 12,000 clicks while GA4 shows 9,800 organic sessions. The gap comes from consent decline, ad blockers and differences in definition. The team documents it and tracks trends instead.'],
+        ['Compare Search Console clicks with GA4 organic sessions for a month', 'Document reasons for gaps', 'Review model comparison in advertising reports'],
+        ['Different attribution models, different answers', 'Organic is often undercounted', 'Triangulate sources'])
+    ], [
+      Q('GA4 is based on:', ['Pageviews only', 'Events', 'Cookies only', 'Server logs'], 1, 'Everything is an event.'),
+      Q('What replaced "conversions" naming in GA4?', ['Goals', 'Key events', 'Hits', 'Tags'], 1, 'Key events is the current term.'),
+      Q('Which tool tests events before relying on data?', ['DebugView', 'robots.txt tester', 'Sitemap', 'Disavow'], 0, 'DebugView shows events in real time.'),
+      Q('Why might GA4 organic sessions be lower than Search Console clicks?', ['Consent declines, ad blockers and definition differences', 'Google hides most of the data from GA4', 'Search Console numbers are always wrong', 'It is impossible for the two to differ'], 0, 'The tools measure differently.'),
+      Q('Linking Search Console to GA4 enables:', ['Query and landing page data in GA4', 'Automatic ranking improvements', 'Free advertising credit', 'Faster hosting for your site'], 0, 'The integration adds search data to GA4 reports.')
+    ]),
+    S('Rank tracking and reporting', [
+      L('Tracking rankings sensibly', 9,
+        ['Choose keywords to track', 'Handle personalization and location', 'Use share of voice'],
+        ['Track a focused set: priority commercial terms, brand terms and a sample of long-tail. Track by location and device because results vary. Rank trackers use consistent, non-personalized queries, so their numbers will not exactly match what you see personally.',
+         'Beyond single positions, use **visibility** or **share of voice** metrics: the estimated share of clicks your tracked keywords capture. Track competitors for context, and compare trends not daily noise.'],
+        ['A site tracks 150 terms across mobile and desktop in two cities. Its visibility score rises from 18% to 24% over a quarter even though a few key terms fluctuate.'],
+        ['Choose 50 keywords across funnel stages', 'Set location and device', 'Add three competitors'],
+        ['Track focused sets', 'Use consistent settings', 'Watch trends and share of voice']),
+      L('Building dashboards', 9,
+        ['Use Looker Studio', 'Combine sources', 'Design for the audience'],
+        ['Looker Studio connects to Search Console, GA4 and spreadsheets for free. Build pages for different audiences: an executive overview (organic revenue, leads, trends), a content view (top pages and growth) and a technical view (indexing, vitals).',
+         'Keep dashboards simple: a handful of metrics, clear titles, comparison to previous period, and annotation of major events. Avoid vanity charts. Schedule delivery by email.'],
+        ['An executive dashboard shows organic leads, revenue, top 5 growth pages and a three-line commentary. It takes two minutes to read.'],
+        ['Connect Search Console and GA4 to Looker Studio', 'Build a one-page overview', 'Add period comparison and a note'],
+        ['Design by audience', 'Keep it simple', 'Automate delivery']),
+      L('Reporting that drives decisions', 9,
+        ['Tell a story with data', 'Link to business outcomes', 'Recommend actions'],
+        ['A report should answer: what happened, why, and what next. Start with the result in business terms (leads, revenue), explain the drivers (rankings, pages, technical fixes), flag risks, and end with prioritized recommendations and owners.',
+         'Be honest about uncertainty. SEO has lag, seasonality and confounders, so avoid claiming single causes without evidence. Show wins and misses; credibility accumulates.'],
+        ['A monthly report states: organic leads up 14% (driven by 3 refreshed guides), a drop for "pricing" queries caused by a competitor\'s new page, and three actions with owners and dates.'],
+        ['Draft a one-page report with result, drivers, risks, actions', 'Add one chart and one commentary', 'Share for feedback'],
+        ['Result, drivers, actions', 'Be honest about uncertainty', 'Report business outcomes'])
+    ], [
+      Q('Rank trackers differ from your personal search because they:', ['Use consistent non-personalized settings', 'Always show wrong results', 'Return random results every time', 'Ignore location completely'], 0, 'Consistency allows trend tracking.'),
+      Q('Share of voice estimates:', ['Page speed across your site', 'Share of clicks your tracked keywords capture', 'The number of links pointing to you', 'How many emails you send'], 1, 'It compares visibility among competitors.'),
+      Q('Which tool connects to Search Console and GA4 for free dashboards?', ['Looker Studio', 'A plain text notepad', 'A drawing program', 'The robots.txt file'], 0, 'Looker Studio has native connectors.'),
+      Q('A good report states:', ['Result, drivers, and recommended actions', 'Only raw numbers', 'Only screenshots', 'Only technical jargon'], 0, 'It should support decisions.'),
+      Q('Because SEO has lag and confounders you should:', ['Avoid claiming single causes without evidence', 'Claim credit for everything that improves', 'Hide the data that is hard to explain', 'Never report on results'], 0, 'Honesty builds credibility.')
+    ])
+  ]);
+})();

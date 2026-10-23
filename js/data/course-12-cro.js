@@ -1,0 +1,127 @@
+(function () {
+  var h = QF.h, L = h.L, S = h.S, Q = h.Q;
+  QF.addCourse({
+    slug: 'conversion-tracking-cro', title: 'Conversion Tracking, Attribution & CRO', subtitle: 'Tags, attribution models, A/B testing and the ROAS and CPA math behind every decision.',
+    track: 'SEM', topic: 'Analytics & CRO', level: 'Intermediate', instructor: 'noor', rating: 4.8,
+    desc: 'If you cannot measure it, you cannot optimize it. This course covers how to set up reliable conversion tracking with Google Tag Manager, how attribution models change the story your data tells, how to run valid A/B tests, and the marketing math that tells you what you can afford to pay for a customer.',
+    learn: ['Implement conversion tracking with GTM and enhanced conversions', 'Compare attribution models and choose one wisely', 'Design and analyze A/B tests', 'Calculate ROAS, CPA, break-even and LTV-based limits', 'Build a testing roadmap'],
+    reqs: ['Basic Google Ads or analytics familiarity', 'Comfort with simple spreadsheets']
+  }, [
+    S('Conversion tracking setup', [
+      L('Tags, triggers and Google Tag Manager', 10,
+        ['Explain tags, triggers and variables', 'Set up a GTM container', 'Use preview mode to test'],
+        ['A **tag** is a snippet that sends data to a platform (GA4, Google Ads, Meta). A **trigger** defines when it fires (page view, button click, form submit). **Variables** supply values (transaction value, page URL). Google Tag Manager (GTM) manages tags in one container so you can deploy and update without editing site code each time.',
+         'Always use GTM Preview mode and platform debug tools (GA4 DebugView, Google Ads tag assistant) before publishing. Keep a naming convention for tags and document each. Use the data layer to pass reliable values such as order total and currency.'],
+        ['A "thank you" page URL trigger fires a Google Ads conversion tag only on `/thank-you`. In Preview, the tag fires once on form submission and not on refresh duplicates after the team adds a once-per-session setting.'],
+        ['Create a GTM container and install it', 'Build a form-submit trigger', 'Test in Preview and publish with notes'],
+        ['Tags send, triggers decide, variables supply', 'Always test in preview', 'Use the data layer for values']),
+      L('Enhanced conversions, consent and privacy', 9,
+        ['Describe enhanced conversions', 'Understand consent mode', 'Respect privacy rules'],
+        ['Enhanced conversions send hashed first-party data (like email) with conversion events to improve matching when cookies are limited. Consent mode adjusts tag behavior based on user consent choices, with modeled conversions filling some gaps where permitted. Implementation must follow laws such as GDPR and local rules and your consent platform setup.',
+         'Be transparent in privacy policies, collect only necessary data, and never send raw personal information where hashing is required. Consult your legal advisor for compliance; this course provides technical guidance, not legal advice.'],
+        ['After enabling enhanced conversions and consent mode, a retailer sees reported conversions recover by around 8% as modeled and matched conversions are added.'],
+        ['Check your consent banner and consent mode status', 'Enable enhanced conversions in a test account', 'Update your privacy policy where needed'],
+        ['Hashed first-party data improves matching', 'Consent mode respects choices', 'Follow the law']),
+      L('Offline conversions, call tracking and validation', 9,
+        ['Import offline conversions', 'Track phone calls', 'Validate numbers across platforms'],
+        ['Many leads close offline. Capture the click ID (GCLID) in a hidden form field, store it in your CRM, and upload sale outcomes back to Google Ads so bidding learns what produces revenue. Call tracking uses dynamic numbers or call extensions with conversion thresholds.',
+         'Validate: compare conversions in Google Ads, GA4 and your CRM/backend orders weekly. Differences are normal (attribution, consent), but large unexplained gaps indicate broken tracking.'],
+        ['A B2B firm uploads "qualified lead" and "closed won" from its CRM. Bidding shifts from cheap unqualified leads to channels producing closed deals, and cost per closed deal drops by 28%.'],
+        ['Add a hidden GCLID field to your lead form', 'Define offline conversion stages', 'Create a weekly reconciliation sheet'],
+        ['Send business outcomes back to platforms', 'Track calls', 'Reconcile regularly'])
+    ], [
+      Q('A trigger defines:', ['When a tag fires', 'The price', 'The domain', 'The bid'], 0, 'It sets the firing conditions.'),
+      Q('Before publishing GTM changes you should:', ['Test in Preview mode', 'Skip testing', 'Delete tags', 'Ignore errors'], 0, 'Preview mode catches mistakes.'),
+      Q('Enhanced conversions use:', ['Hashed first-party data', 'Raw passwords', 'Random numbers', 'Competitor data'], 0, 'Hashing protects the data while improving matching.'),
+      Q('Offline conversion imports need:', ['A stored click ID such as GCLID', 'A new domain', 'A bigger budget', 'No data'], 0, 'The click ID links sales to ads.'),
+      Q('Large unexplained gaps between platform and backend conversions indicate:', ['Possibly broken tracking', 'Perfect tracking', 'Lower costs', 'Better SEO'], 0, 'Investigate tracking.')
+    ]),
+    S('Attribution models', [
+      L('How attribution works', 9,
+        ['Define attribution', 'Compare common models', 'Understand the data-driven model'],
+        ['Attribution assigns credit for a conversion to the touchpoints that preceded it. **Last click** gives all credit to the final click. **First click** gives all credit to the first. **Linear** splits equally; **time decay** gives more credit to recent touches; **position-based** emphasizes first and last. **Data-driven attribution** uses machine learning on your account data to estimate each touchpoint\'s contribution and is the default in Google Ads and GA4.',
+         'No model reveals absolute truth. Each is a lens. Last-click undervalues awareness channels such as video and display; first-click undervalues closers like brand search.'],
+        ['A customer sees a YouTube ad, later clicks a Shopping ad, and finally clicks a brand search ad and buys. Last-click credits brand search entirely. Data-driven may give meaningful credit to YouTube and Shopping.'],
+        ['Compare model reports in Google Ads or GA4', 'Note channels that gain or lose credit', 'Decide which model to use for decisions'],
+        ['Attribution shares credit', 'Data-driven is the default', 'Models are lenses, not truth']),
+      L('Lookback windows and cross-channel views', 8,
+        ['Set conversion windows', 'Read path reports', 'Combine platform and independent data'],
+        ['The conversion window sets how long after a click a conversion can be credited, such as 30 days for clicks. Longer sales cycles need longer windows. Platform reports credit themselves; each channel may claim the same conversion, so totals exceed reality.',
+         'Use path reports and assisted conversions to see how channels work together. Cross-check with backend revenue, media mix modeling or holdout tests for truth about incremental impact.'],
+        ['The sum of conversions claimed by Google, Meta and email equals 140% of backend orders. The marketing team uses backend revenue as the source of truth and uses platform data for relative optimization.'],
+        ['Set conversion windows appropriate to your sales cycle', 'Compare platform totals with backend orders', 'Review a path report'],
+        ['Window length should match sales cycle', 'Platforms over-claim', 'Backend revenue is your anchor']),
+      L('Choosing an attribution approach', 8,
+        ['Match model to objective', 'Avoid constant switching', 'Communicate limitations'],
+        ['For optimizing within Google Ads, data-driven attribution is usually best given enough data. For budget allocation across channels, combine last click, assisted views and incrementality tests. Pick a model, document it and stick to it for consistent trends.',
+         'Explain to stakeholders that numbers vary by model and why. Focus on directional decisions and tests rather than debating decimal differences.'],
+        ['The team agrees: Google Ads uses data-driven attribution; the monthly executive report uses backend revenue with channel contributions from last-click and assisted conversion views.'],
+        ['Write a one-paragraph attribution policy', 'Share with stakeholders', 'Review it quarterly'],
+        ['Pick and document', 'Use several views for budgeting', 'Test for incrementality'])
+    ], [
+      Q('Last-click attribution gives credit to:', ['The final click', 'The first click', 'All equally', 'Nobody'], 0, 'Final touchpoint receives all credit.'),
+      Q('Which is the default in Google Ads and GA4?', ['Data-driven', 'Last click only', 'First click only', 'Linear'], 0, 'Data-driven is the default where eligible.'),
+      Q('Platform-reported conversions across channels often:', ['Add up to more than actual orders', 'Equal orders exactly', 'Are always zero', 'Are hidden'], 0, 'Each platform claims credit.'),
+      Q('A longer sales cycle needs:', ['A longer conversion window', 'A shorter window', 'No window', 'Fewer ads'], 0, 'Window should match buying time.'),
+      Q('What best reveals true incremental impact?', ['Holdout or geo tests', 'Page titles', 'Font size', 'Color'], 0, 'Controlled experiments measure lift.')
+    ]),
+    S('A/B testing and CRO', [
+      L('Forming hypotheses and prioritizing', 9,
+        ['Use research to find problems', 'Write testable hypotheses', 'Prioritize with a framework'],
+        ['Start with evidence: analytics drop-off points, heatmaps, session recordings, surveys, support tickets. Write hypotheses as "Because [evidence], changing [element] to [variant] will improve [metric] for [audience]." Prioritize with ICE (impact, confidence, ease) or PIE scoring.',
+         'Avoid testing random ideas. Test where traffic is high and the page is critical, such as checkout, pricing or lead forms.'],
+        ['Because recordings show visitors abandoning the form at the phone-number field, removing it will increase completion for mobile users. Score: impact 8, confidence 7, ease 9.'],
+        ['Collect three insights from analytics', 'Write three hypotheses in the format', 'Score with ICE'],
+        ['Research before testing', 'Formal hypotheses', 'Prioritize']),
+      L('Running valid tests and avoiding pitfalls', 11,
+        ['Calculate sample size', 'Avoid peeking and novelty effects', 'Interpret results correctly'],
+        ['Determine required sample size before the test using baseline conversion rate, minimum detectable effect and confidence level (commonly 95%) with 80% power. Run for whole weeks (at least two business cycles) to capture weekday variation. Do not stop early when a result looks good; repeated peeking inflates false positives.',
+         'Common pitfalls: testing too many variants with low traffic, sample ratio mismatch, overlapping tests on the same audience, novelty effects, and ignoring segments. Check significance, effect size and practical value together.'],
+        ['Baseline conversion 3%, to detect a 20% relative lift (to 3.6%) at 95% confidence and 80% power needs roughly 14,000 visitors per variant. At 1,000 visitors/day split in two, that is about four weeks.'],
+        ['Use a sample size calculator for your page', 'Set test duration in full weeks', 'Write a stop rule before launching'],
+        ['Plan sample size first', 'Do not peek', 'Whole weeks, one test per audience']),
+      L('Building a CRO program', 9,
+        ['Create a testing roadmap', 'Document learnings', 'Scale wins'],
+        ['A CRO program is a cycle: research, hypothesise, test, learn, repeat. Maintain a backlog, a calendar and a library of results. Include losing tests: they are information.',
+         'Share results widely, scale winning ideas to other pages and ads, and re-test occasionally because audiences and markets shift. Measure program success by revenue impact and learning velocity.'],
+        ['A team runs 2 tests per month. After a year, about a third won, producing a 22% total conversion lift worth six figures, and a shared playbook of what works for its audience.'],
+        ['Create a test log spreadsheet', 'Plan the next quarter of tests', 'Schedule a monthly review'],
+        ['CRO is a cycle', 'Losing tests teach too', 'Scale and retest'])
+    ], [
+      Q('A hypothesis should include:', ['Evidence, change, metric and audience', 'Only a guess', 'Only a color', 'Only a date'], 0, 'Structured hypotheses are testable.'),
+      Q('Why avoid stopping a test early when it looks good?', ['Peeking inflates false positives', 'It costs more', 'Google bans it', 'Tools break'], 0, 'Repeated checks produce false winners.'),
+      Q('Tests should usually run for:', ['Whole weeks', 'A few minutes', 'One hour', 'Until bored'], 0, 'Weekday variation requires complete cycles.'),
+      Q('ICE stands for:', ['Impact, confidence, ease', 'Ideas, content, edits', 'Input, cost, effort', 'Image, color, elements'], 0, 'A prioritization framework.'),
+      Q('Losing tests are:', ['Valuable learning', 'Worthless', 'Hidden', 'Illegal'], 0, 'They show what does not work.')
+    ]),
+    S('The math: ROAS, CPA and profit', [
+      L('ROAS, CPA, CPC and conversion rate', 10,
+        ['Define the core formulas', 'Convert between metrics', 'Spot what drives change'],
+        ['Core formulas: CTR = clicks / impressions. Conversion rate (CVR) = conversions / clicks. CPA = cost / conversions = CPC / CVR. ROAS = revenue / cost. Revenue per click = CVR x average order value (AOV). Profit per click = revenue per click x margin - CPC.',
+         'These link together: a higher CVR lowers CPA without changing CPC, so landing page work is a bid lever. If AOV rises, you can afford a higher CPC at the same ROAS.'],
+        ['Cost $5,000, revenue $20,000, 250 orders. ROAS = 4.0 (400%). CPA = $20. AOV = $80. If CVR is 2.5% then clicks = 10,000 and CPC = $0.50.'],
+        ['Compute the formulas for your last month of data', 'Identify which input has most room to improve', 'Create a calculator in a spreadsheet'],
+        ['CPA = CPC / CVR', 'ROAS = revenue / cost', 'CVR and AOV are bid levers']),
+      L('Break-even and target ROAS', 10,
+        ['Compute break-even ROAS', 'Include margins and costs', 'Set targets from profit goals'],
+        ['**Break-even ROAS = 1 / gross margin.** With a 40% margin, break-even ROAS = 1 / 0.4 = 2.5. Anything above 2.5 is profitable at the contribution level before overhead. To target a profit, solve: target ROAS = 1 / (margin - desired profit rate on revenue). For 40% margin and 15% desired profit, target ROAS = 1 / 0.25 = 4.0.',
+         'Use contribution margin that includes shipping, payment fees, returns and discounts, not just product cost. For leads, break-even CPA = value per lead x close rate x profit per customer.'],
+        ['Product price $100, cost $55, shipping and fees $10: margin = $35 (35%). Break-even ROAS = 1 / 0.35 = 2.86. A ROAS of 3.5 yields profit; 2.0 loses money.'],
+        ['Calculate your true contribution margin', 'Compute break-even ROAS', 'Set target ROAS with your profit goal'],
+        ['Break-even ROAS = 1 / margin', 'Use contribution margin', 'Lead businesses use close rate and value']),
+      L('Lifetime value and allowable CPA', 9,
+        ['Estimate customer lifetime value', 'Compute allowable CPA', 'Balance payback and growth'],
+        ['Customer lifetime value (LTV) estimates total profit from a customer over their relationship: average order value x purchase frequency x gross margin x lifespan. Allowable CPA is often a fraction of LTV, for example LTV:CAC of 3:1 is a common benchmark for subscription businesses, but cash-flow and payback period matter too.',
+         'If first-order profit is negative but repeat purchases produce profit, you can bid more aggressively, provided you have cash reserves and reliable retention data.'],
+        ['A subscription box has a first-order margin of $15 and expected 9 months of retention at $15 margin = $135 LTV profit. With a 3:1 target, allowable CAC is $45.'],
+        ['Estimate LTV for your business', 'Compute allowable CPA at 3:1', 'Estimate payback in months'],
+        ['LTV expands what you can afford', 'Check payback and cash flow', 'Use realistic retention data'])
+    ], [
+      Q('CPA equals:', ['CPC / CVR', 'CVR / CPC', 'Revenue / cost', 'Clicks / cost'], 0, 'Cost per conversion = CPC / conversion rate.'),
+      Q('Break-even ROAS with 40% margin is:', ['1.0', '2.0', '2.5', '4.0'], 2, '1 / 0.4 = 2.5.'),
+      Q('If revenue is $20,000 and cost is $5,000, ROAS is:', ['2', '4', '5', '15'], 1, '20000 / 5000 = 4.'),
+      Q('Which margin should you use for break-even?', ['Contribution margin including fees and returns', 'Revenue only', 'Domain cost', 'Ad count'], 0, 'True profit margin avoids overstating profit.'),
+      Q('An LTV:CAC of 3:1 on LTV $135 allows CAC of:', ['$15', '$45', '$135', '$405'], 1, '135 / 3 = 45.')
+    ])
+  ]);
+})();
