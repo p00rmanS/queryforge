@@ -333,6 +333,7 @@
       '<section class="objectives"><h2>What you will be able to do</h2><ul>' + l.obj.map(function (o) { return '<li>' + fmt(o) + '</li>'; }).join('') + '</ul></section>' +
       '<section><h2>The idea</h2>' + QF.blocks(l.body) + '</section>' +
       '<section class="example"><h2>Worked example</h2>' + QF.blocks(l.example) + '</section>' +
+      (l.deep ? '<details class="deep"><summary>Go deeper: how experts handle the edge cases</summary><div class="deep-body">' + QF.blocks(l.deep) + '</div></details>' : '') +
       (l.say ? '<section class="say"><h2>Say it to the client</h2>' + l.say.map(function (x) { return '<p class="bubble you">' + fmt(x) + '</p>'; }).join('') + '</section>' : '') +
       (l.oops ? '<section class="oops"><h2>Avoid the cringe</h2><p>' + fmt(l.oops) + '</p></section>' : '') +
       '<section><h2>Try it yourself</h2><ul class="checklist">' + l.exercise.map(function (x, i) {

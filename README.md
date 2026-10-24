@@ -38,6 +38,10 @@ Lessons accept an optional 8th argument `{ say: [...], oops: "..." }` that rende
 
 Each section needs 3-6 lessons and a 5-question quiz. Answer options are shuffled at load, so write them in any order.
 
+## Go deeper sections
+
+Advanced material lives in `js/data/deep-*.js` as `QF.deep['course-slug|section|lesson'] = [paragraphs]`. When present, the lesson shows an expandable "Go deeper" block (71 lessons have one so far: technical SEO, keyword research, on-page, local SEO, Google Ads fundamentals and advanced PPC).
+
 ## Notes
 
 Instructors, ratings, reviews and testimonials are fictional sample content and are labeled as such in the UI. Enrollment and sign-in are simulated. Certificates are demo documents, not accredited credentials.

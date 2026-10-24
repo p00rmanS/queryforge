@@ -77,10 +77,11 @@
         s.lessons.forEach(function (l, li) {
           l.key = c.id + ':' + si + '.' + li; l.si = si; l.li = li; l.courseId = c.id;
           l.id = si + '-' + li;
+          var dd = QF.deep && QF.deep[c.slug + '|' + si + '|' + li]; if (dd) l.deep = dd;
           s.mins += l.mins; c.lessonCount++;
           QF.lessonIndex.push({
             course: c, section: s, lesson: l,
-            text: (l.title + ' ' + l.obj.join(' ') + ' ' + l.body.join(' ') + ' ' + l.takeaways.join(' ') + ' ' + (l.say || []).join(' ')).toLowerCase()
+            text: (l.title + ' ' + l.obj.join(' ') + ' ' + l.body.join(' ') + ' ' + l.takeaways.join(' ') + ' ' + (l.say || []).join(' ') + ' ' + (l.deep || []).join(' ')).toLowerCase()
           });
         });
         c.mins += s.mins; c.quizCount++;
@@ -96,6 +97,7 @@
           q.ans = q.opts.indexOf(correct); q.shuffled = true;
         });
       });
+      /* Optional deeper material, kept in js/data/deep-*.js as QF.deep['slug|section|lesson'] = [paragraphs]. */
       c.flat = [];
       c.sections.forEach(function (s) { s.lessons.forEach(function (l) { c.flat.push(l); }); });
       var h = QF.hash(c.id);
