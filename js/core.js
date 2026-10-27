@@ -11,7 +11,7 @@
   /* Renders an array of strings; consecutive "::" lines become one <pre>. */
   QF.blocks = function (arr) {
     var out = [], pre = [];
-    function flush() { if (pre.length) { out.push('<pre><code>' + QF.esc(pre.join('\n')) + '</code></pre>'); pre = []; } }
+    function flush() { if (pre.length) { out.push('<pre tabindex="0"><code>' + QF.esc(pre.join('\n')) + '</code></pre>'); pre = []; } }
     (arr || []).forEach(function (t) {
       if (t.indexOf('::') === 0) pre.push(t.slice(2));
       else { flush(); out.push('<p>' + QF.fmt(t) + '</p>'); }
