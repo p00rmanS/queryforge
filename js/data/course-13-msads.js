@@ -68,7 +68,7 @@
     S('Remarketing and audiences', [
       L('Remarketing fundamentals', 9,
         ['Define remarketing', 'Build audience lists', 'Plan membership durations'],
-        ['Remarketing (retargeting) shows ads to people who previously interacted with your site, app or business. Audience segments include all visitors, product viewers, cart abandoners, past purchasers and engaged video viewers. Audience lists need a minimum size (typically 1,000 users for Display and 100 for Search) before ads serve.',
+        ['Remarketing (retargeting) shows ads to people who previously interacted with your site, app or business. Audience segments include all visitors, product viewers, cart abandoners, past purchasers and engaged video viewers. Audience lists need a minimum size before ads serve. On Google, the common minimums are about 100 active users for Display and about 1,000 for Search, and other platforms differ, so check the current documentation.',
          'Set membership durations according to the buying cycle: cart abandoners 7 to 14 days, product viewers 30 days, past buyers longer for repeat purchase. Exclude converters from acquisition-style messages.'],
         ['A shoe store builds "viewed product, not purchased, last 14 days" and "purchased last 180 days" lists. The first gets a reminder with free returns; the second gets a new-arrivals message.'],
         ['Define three audiences for your site', 'Set membership durations', 'Exclude converters from reminder campaigns'],
