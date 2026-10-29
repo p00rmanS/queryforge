@@ -1,0 +1,107 @@
+(function () {
+  var h = QF.h, L = h.L, S = h.S, Q = h.Q;
+  QF.addCourse({
+    slug: 'images-video-discover-news', title: 'Beyond the Blue Links: Images, Video, Discover & News', subtitle: 'Optimize for the other places Google shows content: image search, video, Discover and news results.',
+    track: 'SEO', topic: 'Search Surfaces', level: 'Intermediate', stage: 3, instructor: 'tobias', rating: 4.6,
+    desc: 'Web results are only one part of search. People find businesses through image results, videos, personalized feeds and news boxes, and each has its own rules and opportunities. This course shows how each works, how to qualify, and how to measure and avoid over-dependence on any one of them.',
+    learn: ['Optimize images for Google Images and Lens', 'Mark up and promote video for search and YouTube', 'Explain how Google Discover works and what eligibility requires', 'Understand Google News and Top Stories basics', 'Measure each surface in Search Console and analytics', 'Plan content that fits the right surface'],
+    reqs: ['On-Page SEO and Technical SEO basics', 'Basic Search Console familiarity']
+  }, [
+    S('Image search', [
+      L('How image search works and where the opportunity is', 9,
+        ['Explain how Google finds and ranks images', 'Know which businesses benefit most', 'Understand the role of context'],
+        ['Google Images and visual search features (including Google Lens) let people find products, places, ideas and answers by browsing pictures. Google finds images on pages, understands them from the pixels, the **surrounding text**, the page topic, filenames and alt text, and shows them in dedicated image results and in some web results.',
+         'Image search matters most for **visual industries**: products, fashion, home decor, recipes, travel, art, real estate and DIY. For a store, product images that rank can be a steady source of visits. For a service business, photos of real work can support local credibility and appear in image results for local searches.',
+         'Context is everything. An image on a page about the topic, with relevant text beside it, a clear title and a good page experience, is far more likely to rank than a decorative image on an unrelated page. Original, high-quality images that others use or link to also build authority.'],
+        ['A garden center photographs its own plants in real gardens instead of stock images. The photos begin to appear in image results for plant names and add steady traffic to product and care pages.'],
+        ['Search three product terms in image search and note the style of images that appear', 'List five images on a site that could rank', 'Check whether those images have meaningful surrounding text'],
+        ['Context and surrounding text drive image ranking', 'Visual industries benefit most', 'Original images are an asset']),
+      L('Optimizing images for search', 10,
+        ['Apply the technical basics', 'Use structured data and sitemaps where useful', 'Balance quality and speed'],
+        ['Technical basics: use real `<img>` elements (not only CSS backgrounds) so images are crawlable, give files descriptive names (`blue-ceramic-vase.jpg`), write helpful **alt text** that describes the image in context, use responsive images (`srcset`) and modern formats, set dimensions to avoid layout shift and compress files. Make sure images are not blocked in robots.txt.',
+         'Place images near relevant text and use clear captions where they help users. Avoid text inside images for important information, and repeat essential details in HTML. For large catalogs, an **image sitemap** can help discovery, and structured data for products, recipes and articles can provide image URLs in the right sizes (multiple aspect ratios are recommended for some features).',
+         'Do not let large images slow the page. Balance sharpness and file size, lazy-load below-the-fold images and keep the main hero fast. Respect copyright and licensing: use images you own or are licensed to use, and consider adding licensing metadata where it applies.'],
+        ['A recipe site adds square, 4:3 and 16:9 versions of each dish image in its Recipe markup, compresses files and fixes lazy-loading of the main photo. Recipe rich results with bigger images begin to show and clicks rise.'],
+        ['Audit ten images for filename, alt text and size', 'Create an image sitemap for a small catalog', 'List where licensing information is recorded'],
+        ['Crawlable, well-named, well-described images', 'Provide multiple sizes where features require', 'Do not sacrifice speed for sharpness']),
+      L('Visual search, product images and licensing', 8,
+        ['Explain how visual search can send traffic', 'Prepare product imagery', 'Handle copyright and licensing'],
+        ['Visual search lets people search with a photo, for example by pointing a phone camera at an item. It can surface similar products and shopping results. Clear, well-lit product images on plain or consistent backgrounds, several angles and accurate product data in the feed and markup help your products be understood and shown.',
+         'For shopping, use the image requirements set by merchant platforms (size, no watermarks or promotional text overlays, product dominant in the frame). Keep image URLs stable so results do not break when you move files.',
+         'Copyright matters. Do not use images you do not have rights to, even if found online. Keep records of who owns or licensed each image. If your own images are copied by others, you can use takedown processes and consider licensing metadata that tells search engines how to credit and license them.'],
+        ['A furniture brand reshoots its top 50 products with consistent backgrounds and extra angles, and updates its feed. Visual search and shopping impressions rise, and returns fall because customers see the product more clearly.'],
+        ['Write a product photo specification for a client', 'List where image rights are recorded', 'Check a feed for image problems'],
+        ['Clear product photos help visual search', 'Follow merchant image requirements', 'Track ownership and licenses of images'])
+    ], [
+      Q('Which helps Google understand an image?', ['The surrounding text, page topic and alt text', 'Only the file size of the image', 'Only the dominant color in the image', 'Only the date the image was uploaded'], 0, 'Context and descriptions are major signals.'),
+      Q('Which images are not reliably crawlable?', ['Images only set as CSS backgrounds', 'Images placed in standard img elements', 'Images that have clear alt text', 'Images with descriptive file names'], 0, 'Images placed only via CSS may not be understood or indexed as content images.'),
+      Q('What does an image sitemap help with?', ['Discovering images on large sites', 'Increasing the page weight of image pages', 'Blocking images from appearing in results', 'Verifying ownership of the domain'], 0, 'It lists image URLs to help search engines find them.'),
+      Q('Which businesses benefit most from image search?', ['Visual ones such as products, recipes and travel', 'Only banks and other financial institutions', 'Only law firms and accountants', 'Only domain name sellers'], 0, 'Visual categories get more image-driven discovery.'),
+      Q('What should you check before using an image found online?', ['That you have rights or a license to use it', 'Its file name and whether it looks professional', 'Its color depth and resolution only', 'Its alt text and caption only'], 0, 'Copyright applies to most online images.')
+    ]),
+    S('Video', [
+      L('Video in Google Search and on YouTube', 9,
+        ['Explain how video appears in results', 'Choose between hosting on YouTube or your site', 'Match video to search intent'],
+        ['Google shows videos in **video carousels, video results and key moments** within results. For "how to" and review searches, video is often a major result type. YouTube is also the second most popular search destination for many audiences, with its own search system.',
+         'Hosting choices: **YouTube** gives reach, discovery and easy embedding, and often outranks the same video hosted on your own site in video results. Hosting on your site (or a video platform) can keep viewers on your pages and give you more control over structured data. Many businesses publish on YouTube and embed the video on a relevant page that has useful supporting text.',
+         'Match intent. Ask what the SERP shows: if videos dominate a query, create a short, clear video. If text dominates, a video can enhance a page but may not rank alone. Videos that answer one question well tend to do better than long general ones.'],
+        ['A bike shop films a three-minute "how to fix a flat tire" video, publishes it on YouTube and embeds it on a guide page with step text. The video appears in search results for the query and the page earns bookings for repairs.'],
+        ['Search five how-to queries and note whether video appears', 'Decide where to host a video for a client and why', 'Outline a three-minute video answering one common question'],
+        ['Video features in many results, especially how-to', 'Publish on YouTube and embed with supporting text', 'Match format to what the SERP shows']),
+      L('VideoObject markup, sitemaps and key moments', 10,
+        ['Add video structured data', 'Help search engines find the video', 'Use chapters and key moments'],
+        ['The `VideoObject` structured data describes a video with properties such as name, description, thumbnail URL, upload date, duration and the content URL or embed URL. It helps search engines understand and show videos, and is needed for some video features. Each video needs a **real thumbnail** and the video should be the main content of the page or clearly featured.',
+         'A **video sitemap** (or video entries in a normal sitemap) lists videos and their details to help discovery on large sites. Make sure video files and embed pages are crawlable and not blocked.',
+         '**Key moments** let people jump to parts of a video. You can mark them up with `Clip` structured data or provide timestamps in the description (on YouTube, chapter timestamps starting at 0:00). Clear chapters help viewers and can appear in results.'],
+        ['::{', '::  "@context": "https://schema.org",', '::  "@type": "VideoObject",', '::  "name": "How to fix a flat bike tire",', '::  "description": "A three-minute guide to patching an inner tube.",', '::  "thumbnailUrl": "https://example.com/img/flat-tire.jpg",', '::  "uploadDate": "2026-02-10",', '::  "duration": "PT3M12S"', '::}'],
+        ['Write VideoObject markup for a video you know', 'Add chapter timestamps to a video description', 'Check that the page and video are crawlable'],
+        ['VideoObject describes a video to search engines', 'Sitemaps help discover videos at scale', 'Chapters help viewers and results']),
+      L('YouTube channel SEO and measurement', 9,
+        ['Optimize titles, descriptions, thumbnails and playlists', 'Understand engagement signals', 'Measure video as part of the funnel'],
+        ['YouTube ranks videos using relevance (title, description, captions, topic) and viewer behavior (clicks, watch time, satisfaction). Write clear, specific titles with the main phrase, informative descriptions with links, accurate captions, a thumbnail that is readable and honest, and group videos into playlists by topic.',
+         'Make videos worth watching: a strong opening, direct answers, tight editing and a clear next step. Misleading titles or thumbnails may win clicks but lose viewers, which hurts. Encourage subscriptions and comments naturally.',
+         'Measure inside YouTube Studio (impressions, click-through rate, average view duration, traffic sources) and connect to business results with tagged links in descriptions, end-screen links and branded search growth. Report video as part of the journey, not only views.'],
+        ['A plumber\'s channel adds chapters, captions and tagged links under each video. YouTube Studio shows steady views from search, and tagged links bring a handful of booking requests each month.'],
+        ['Rewrite one video title and description for clarity', 'Create three playlists for a channel', 'Add tagged links to a video description'],
+        ['Relevance and viewer behavior drive YouTube ranking', 'Honest thumbnails and titles keep viewers', 'Tag links to see business impact'])
+    ], [
+      Q('What does VideoObject structured data describe?', ['A video, including title, thumbnail and duration', 'A product price and availability only', 'A local business address and opening hours', 'A blog author and their biography'], 0, 'It provides search engines with details about a video.'),
+      Q('Chapters on a YouTube video help by:', ['Letting viewers jump to parts and giving search clearer signals', 'Hiding the video so only subscribers see it', 'Blocking comments below the video', 'Raising the advertising cost of the video'], 0, 'They improve usability and can appear in results.'),
+      Q('When may video be the best format to create?', ['When the results for a how-to query are mostly videos', 'Never, because video cannot rank in search', 'Only for banks and insurance companies', 'Only for long reports and white papers'], 0, 'Search results show what formats searchers prefer.'),
+      Q('How can video be linked to business results?', ['Tagged links, branded search trends and assisted conversions', 'Only by counting views on each video', 'Only by counting comments on each video', 'Only by counting subscribers to the channel'], 0, 'Views alone do not show value.'),
+      Q('What does a video sitemap help with?', ['Discovery of videos on large sites', 'Changing the quality of the video file', 'Blocking search bots from the video pages', 'Hosting the video files on the server'], 0, 'It lists videos and metadata to help search engines find them.')
+    ]),
+    S('Discover and news', [
+      L('Google Discover: personalized, query-less traffic', 10,
+        ['Explain how Discover differs from search', 'List eligibility basics', 'Plan content and images for it'],
+        ['**Google Discover** shows personalized content to people in the Google app and on mobile home pages **without them searching**. Content is selected based on interests and behavior, so traffic can spike dramatically and vanish just as fast. There are no keywords to target and nothing to submit; pages that are indexed and meet Google\'s content policies can be eligible.',
+         'What tends to perform: fresh, interesting, high-quality content on topics people follow, a compelling but honest headline (no clickbait), and **large, high-quality images** (at least 1,200 pixels wide, with the `max-image-preview:large` robots setting enabled so larger previews are allowed). Strong brand recognition and topic authority help.',
+         'Treat Discover as a **bonus**, not a foundation. It is volatile, you cannot control it, and policies are strict about misleading, sensational or low-quality content. Measure it in Search Console\'s Discover report and make sure the business does not depend on it.'],
+        ['A travel blog finds that its in-depth city guides with large original photos appear in Discover, bringing sudden traffic after each update. It adds an email signup to those pages so the visits turn into a lasting audience.'],
+        ['Check whether a site has a Discover report in Search Console', 'Verify large image previews are allowed on a site', 'Write three honest headlines for a trending topic'],
+        ['Discover shows content without a search', 'Large original images and quality content matter', 'It is volatile, so do not depend on it']),
+      L('Google News and Top Stories basics', 9,
+        ['Explain how news content appears', 'List technical and editorial basics', 'Use news markup and sitemaps where appropriate'],
+        ['News content can appear in **Top Stories** boxes, the News tab and the Google News app. There is no application you must complete to be included in many surfaces; Google can discover news content through normal crawling. Publishers can also provide additional information through programs such as Google Publisher Center, depending on their needs.',
+         'Editorial basics: clear authorship, dates and bylines, transparent ownership and contact information, original reporting, accuracy and correction practices, and clear separation of news from advertising. Avoid deceptive practices and misleading headlines. Technically: fast mobile pages, `NewsArticle` or `Article` structured data, accurate dates and a **news sitemap** for publishers that publish many articles each day.',
+         'Competition for Top Stories is about speed, authority and relevance, so timing matters. Keep URLs stable, update stories rather than creating duplicates and use clear headlines that match search language without exaggeration.'],
+        ['A local news site adds author pages, shows publication and update times, publishes a news sitemap and speeds up its article template. It starts appearing in Top Stories for city events.'],
+        ['Add Article markup with dates and authors to a sample page', 'List editorial transparency items a news site should show', 'Plan a process for updating stories without duplicating them'],
+        ['Normal crawling can include news content', 'Editorial transparency and speed matter', 'News markup and sitemaps help at scale']),
+      L('Measuring and diversifying across surfaces', 8,
+        ['Read the performance reports by search type', 'Avoid over-dependence on one surface', 'Plan content mix'],
+        ['In Search Console, the Performance report lets you filter by **search type** (web, image, video, news) and shows separate Discover and Google News reports where available. Compare clicks, impressions and click-through rate by surface, and identify the pages and queries driving each.',
+         'Each surface has different volatility and value. Web search brings intent-led visitors; image and video bring discovery and product interest; Discover brings bursts of casual interest; news brings timely attention. Judge value by what visitors do: engagement, signups, leads and sales.',
+         'Diversify. Do not let a single surface drive the business. Build owned channels (email, community, direct), maintain evergreen content and create formats that fit each surface (large images, short videos, well-structured news). Review the mix quarterly.'],
+        ['A publisher sees that 45 percent of its recent traffic came from Discover, which fell sharply after a feed change. The team shifts effort toward newsletters and evergreen guides and sets a rule that no single source should exceed 35 percent of traffic.'],
+        ['Filter a Search Console report by image and video search type', 'Compare engagement of visitors from two surfaces', 'Set a rule for maximum dependence on one source'],
+        ['Use search type filters and separate reports', 'Judge each surface by visitor value', 'Diversify sources and channels'])
+    ], [
+      Q('How is Discover different from web search?', ['It shows content without the user searching', 'It requires people to type specific keywords', 'It is only available as a paid advertising product', 'It only shows videos and never articles'], 0, 'Discover is a personalized feed.'),
+      Q('Which helps content appear in Discover?', ['High-quality content with large, high-quality images', 'Clickbait headlines that promise more than the page delivers', 'Tiny images so the page loads faster', 'Hidden text that repeats the main topic'], 0, 'Quality and strong imagery support eligibility.'),
+      Q('Why should you not rely on Discover for most traffic?', ['It is volatile and outside your control', 'It is illegal to earn traffic from it', 'It costs money for every visitor it sends', 'It only works at night in some regions'], 0, 'Discover traffic can spike and drop quickly.'),
+      Q('What helps a news article be understood?', ['Clear dates, authors and Article markup', 'Removing the headline so the page is cleaner', 'Hiding the author byline to protect privacy', 'Using only images and no article text'], 0, 'Transparent metadata supports understanding and trust.'),
+      Q('Where can you compare performance by image, video and news?', ['The Search Console Performance report search type filter', 'The robots.txt report in the same property', 'A sitemap file submitted to the property', 'A page speed tool outside Search Console'], 0, 'Search type filters separate these surfaces.')
+    ])
+  ]);
+})();

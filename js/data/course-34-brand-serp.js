@@ -1,0 +1,108 @@
+(function () {
+  var h = QF.h, L = h.L, S = h.S, Q = h.Q;
+  QF.addCourse({
+    slug: 'brand-serp-and-reputation', title: 'Brand Search, Entities & Online Reputation', subtitle: 'What appears when someone searches your client\'s name, how to influence it, and what to do about bad results and bad reviews.',
+    track: 'SEO', topic: 'Reputation', level: 'Intermediate', stage: 3, instructor: 'priya', rating: 4.7,
+    desc: 'Before buying, hiring or visiting, people search for the name. What they see in those results can win or lose the customer. This course covers the anatomy of brand results, knowledge panels and entities, review strategy across platforms, what can and cannot be removed, and how to respond to a crisis without making it worse.',
+    learn: ['Read and audit a brand search result page', 'Understand entities, knowledge panels and how to influence them', 'Build a review strategy across platforms', 'Know what negative content can realistically be removed or pushed down', 'Monitor mentions and respond to a reputation incident', 'Measure brand strength with search and sentiment data'],
+    reqs: ['SEO Fundamentals and Local SEO basics help', 'Digital PR knowledge from the link building course is useful']
+  }, [
+    S('Your brand\'s search results', [
+      L('The anatomy of a brand search result page', 9,
+        ['Identify the elements of a brand SERP', 'Judge which are controllable', 'Audit a brand SERP systematically'],
+        ['Search for any company name and you will usually see: the official website (often with **sitelinks**), a **knowledge panel** on the right or top on some devices, maps and Business Profile for local businesses, social profiles, review sites, news stories, videos, images, forum threads and sometimes ads from competitors. Together these form the **brand SERP**.',
+         'Some of this you control directly (your website, social profiles, Business Profile, press releases), some you influence (review sites, news coverage, directory listings) and some you cannot control (articles, forums, competitor ads). The goal is a first page that is accurate, current and convincing.',
+         'Audit it: search the brand name, common misspellings, the name plus "reviews", "complaints", "pricing", "login" and "vs competitor". Record what appears and in which order, with date, device and location. Note ads from competitors and any outdated or incorrect information. Repeat monthly and after major events.'],
+        ['An audit of a tutoring company\'s brand search finds an old address in a directory, a three-year-old complaint thread on page one and no video. The action plan fixes the listing, adds a short intro video and asks for new reviews on the platform that ranks.'],
+        ['Run a brand audit for a company you know with the six query variations above', 'Mark each result as controlled, influenced or uncontrolled', 'List three fixes in priority order'],
+        ['A brand SERP mixes owned, earned and third-party results', 'Audit variations like reviews, complaints and pricing', 'Repeat the audit regularly']),
+      L('Knowledge panels, entities and structured data', 10,
+        ['Explain what an entity is', 'Describe how knowledge panels are formed', 'Take sensible steps to influence and correct them'],
+        ['Search engines organize information about **entities**: people, companies, places and things, and the relationships between them. A **knowledge panel** is an information box about an entity, drawing on sources such as the official website, authoritative databases, Wikipedia and Wikidata, social profiles and news. You cannot buy one, and Google decides when to show it.',
+         'What helps: a clear, consistent description of the brand across the web, an **About** page with factual details, `Organization` structured data with name, logo, contact and `sameAs` links to official profiles, a verified Business Profile for local entities, and coverage in reputable sources. Entities with a verified owner can suggest edits to some panels through Google\'s verification process.',
+         'Do not expect instant results, and do not try to game it by creating fake profiles or editing reference sites to say what you want. If a panel is wrong, find the source of the wrong data, correct it there if you legitimately can, and use the official feedback or verification route.'],
+        ['A software company adds Organization markup with its official profiles, publishes a clear About page and updates its profiles to a consistent description. Within months, the knowledge panel shows the correct logo and founding details that it previously got wrong.'],
+        ['Write a consistent 50-word description for a brand', 'List the official profiles to include in sameAs', 'Check whether the brand has a panel and what sources it seems to use'],
+        ['Entities are things search engines know about', 'Consistency and reputable sources help panels', 'Never fabricate data to influence them']),
+      L('Sitelinks, branded queries and what you can influence', 9,
+        ['Explain sitelinks', 'Use site structure and titles to help', 'Understand branded query demand'],
+        ['**Sitelinks** are extra links under the main result for a brand search. Google creates them automatically from your site structure, so clear navigation, descriptive page titles and sensible internal linking give it good options. You cannot choose them directly, but you can demote a sitelink through Search Console\'s removals tools if one is inappropriate.',
+         'Branded queries (searches containing the name) are a signal of awareness. Their volume, the proportion that go to your site and the related searches ("brand reviews", "brand pricing") show how people think about the brand. Rising brand searches often follow PR, advertising, partnerships and good word of mouth.',
+         'Protect the brand search space: own your top results, consider a small brand ad campaign if competitors bid on your name, and make sure the site clearly answers the common branded questions (pricing, contact, login, reviews, returns). A confusing result for your own name loses easy conversions.'],
+        ['A clinic notices people searching "brand opening times" land on a third-party directory with wrong hours. The clinic corrects the listing and adds a clear hours section to its homepage, and the site takes the top result.'],
+        ['List the ten most common branded questions for a company', 'Check whether each is answered on the website', 'Decide whether a brand ad campaign is justified'],
+        ['Sitelinks come from clear structure', 'Branded demand reflects awareness', 'Answer common branded questions on your own site'])
+    ], [
+      Q('What is a brand SERP?', ['The results page shown for a search of the brand name', 'A paid ad format that appears above search results', 'A type of sitemap listing brand pages', 'A hosting plan for brand websites'], 0, 'It is the collection of results people see when they search the brand.'),
+      Q('Can a business buy a knowledge panel?', ['No, Google decides based on its sources', 'Yes, by buying it through Google Ads', 'Yes, by editing the Wikipedia page about yourself', 'Yes, with a paid plugin for the website'], 0, 'Panels are algorithmic and cannot be purchased.'),
+      Q('Which structured data helps describe a company entity?', ['Organization with sameAs links', 'Recipe markup on the home page', 'JobPosting markup on the About page', 'Event markup on the contact page'], 0, 'Organization markup clarifies identity and official profiles.'),
+      Q('Sitelinks are created by:', ['Google, from your site structure', 'You, by choosing them directly in the HTML', 'Your web host, from your server settings', 'The visitor\'s browser, from the browsing history'], 0, 'They are automatic, so clear structure helps.'),
+      Q('Why audit queries like "brand complaints"?', ['People search them before buying, and results influence trust', 'Google requires brands to audit them every month', 'They give the site free links when you click them', 'They remove the negative reviews once searched'], 0, 'Those results shape perceptions at decision time.')
+    ]),
+    S('Reputation management', [
+      L('A review strategy across platforms', 10,
+        ['Choose the platforms that matter', 'Build a consistent request process', 'Respond professionally on each'],
+        ['Reviews live on many platforms: Google Business Profile, industry sites, marketplaces and social networks. Choose the **platforms that matter for the client\'s industry and location** (for example Google for local, specialist sites for software or travel) and avoid spreading effort too thin. Start with the profile that appears in the brand search.',
+         'Build a steady request process: ask every customer at the right moment through a direct link, never incentivize or filter, and keep volume steady. Follow each platform\'s rules (some prohibit asking in certain ways). Train staff to ask naturally.',
+         'Respond to reviews on each platform in a consistent voice. Thank people, address problems, offer to resolve offline and keep personal details out of public replies. Track rating, number, recency and response rate by platform, and use review themes to improve the business.'],
+        ['A dentist\'s group lists five platforms, picks Google and one industry site as priorities and builds a text-message request after each visit. In six months it triples its review count and the average replies per week to new reviews hits 100 percent.'],
+        ['Choose two priority platforms for a business and justify them', 'Write the review request message', 'Create a tracking table for rating, count and response rate'],
+        ['Focus on the platforms customers use', 'Ask everyone, never incentivize or gate', 'Respond consistently and learn from themes']),
+      L('Negative content: what can and cannot be removed', 10,
+        ['Explain the limits of removal', 'Use official removal routes correctly', 'Avoid unethical suppression'],
+        ['Many clients ask: "can you remove this?" The honest answer is usually **no, unless it breaks the rules or the law**. Search engines show what exists on the web; the content itself stays unless the site owner removes it. Search engines have limited removal routes: for content that violates their policies (such as certain personal data, explicit non-consensual imagery, or legal removals), outdated results after a page is deleted, and specific legal requests that vary by country.',
+         'Genuine options: contact the site owner and ask for correction or removal, respond publicly and professionally, resolve the underlying issue and ask for an update, report content that breaks a platform\'s rules, and seek legal advice for defamation or privacy claims. Treat legal threats carefully and involve a lawyer.',
+         'The other approach is to **push down** negative results by building more positive, relevant, high-quality assets (a strong site, accurate profiles, press, interviews, videos). This takes months, offers no guarantees and should be ethical: no fake reviews, no fake sites, no attacks on others. Be clear with clients that removal is often impossible and suppression is gradual.'],
+        ['A restaurant has an outdated news story about a closure that happened under previous owners. The owner contacts the publisher, who adds a clarification. The restaurant also publishes a new ownership story and earns local press, which gradually outranks the old piece.'],
+        ['Write the honest explanation you would give a client who wants a result removed', 'List the removal routes that exist for your region', 'Plan a set of positive assets for a brand'],
+        ['Removal is rare and rule-based', 'Resolve, respond and build better results', 'Never use deceptive suppression tactics'],
+        { oops: 'Promising a client that you can "delete anything from Google". It is usually false and damages trust when it fails.' }),
+      L('Monitoring and crisis response', 10,
+        ['Set up monitoring', 'Respond calmly and quickly to a crisis', 'Communicate across channels'],
+        ['Set up **monitoring** for brand mentions: alerts for the name and key people, review notifications, social listening tools and checks of the brand search results. Decide who is notified and how fast, and keep a contact list for urgent issues.',
+         'In a crisis (viral complaint, product problem, data incident), speed and tone matter. Acknowledge the problem, state what you know and do not know, say what you are doing and when you will update, and correct facts politely. Avoid defensiveness, deleting criticism or attacking the person raising it.',
+         'Align channels: the website, social accounts, customer service and sales should share the same facts. Prepare a short holding statement and an approval process in advance. After the event, review what happened, fix the root cause and update the plan.'],
+        ['A food brand receives viral posts about a product recall. Its team publishes a clear statement on its homepage and social channels within two hours, answers questions with the same facts and updates daily. Trust recovers faster than for a competitor that stayed silent.'],
+        ['Set up alerts for a brand name', 'Draft a holding statement template', 'List who approves public statements and how quickly'],
+        ['Monitor mentions and reviews', 'Be fast, factual and consistent in a crisis', 'Review and improve afterwards'])
+    ], [
+      Q('When can negative content usually be removed from search?', ['When it breaks platform rules or law, or the source removes it', 'When a client simply dislikes it and asks Google nicely', 'When you pay Google a removal fee', 'Always within a week of making a request'], 0, 'Removal depends on policy violations, legal grounds or the site owner.'),
+      Q('What is a legitimate way to reduce the visibility of negative results?', ['Create more positive, high-quality, relevant content', 'Post fake reviews to push the bad ones down', 'Create fake sites that attack the people who complained', 'Build thousands of spam links to the positive pages'], 0, 'Ethical suppression builds better assets over time.'),
+      Q('How should you ask customers for reviews?', ['Ask everyone without incentives or filtering', 'Ask only the customers you know are happy', 'Pay customers for five-star ratings', 'Write the reviews yourself and post them for customers'], 0, 'Fair, steady requests follow platform rules.'),
+      Q('What should a crisis statement include?', ['What you know, what you are doing and when you will update', 'A denial of everything until lawyers advise', 'Attacks on the critics who raised the issue', 'Silence until the story disappears'], 0, 'Clear, honest communication builds trust.'),
+      Q('Why monitor brand mentions?', ['To respond quickly to issues and opportunities', 'To block all criticism before anyone can read it', 'To raise the cost per click for competitors', 'To remove links pointing to the site automatically'], 0, 'Early awareness allows faster, calmer responses.')
+    ]),
+    S('Authority and measurement', [
+      L('Wikipedia, Wikidata and notability', 9,
+        ['Understand notability standards', 'Avoid conflict-of-interest mistakes', 'Support entity understanding ethically'],
+        ['Wikipedia has strict rules: a subject needs **notability**, shown by significant coverage in reliable, independent sources. Many businesses do not qualify, and that is fine. Editing a page about yourself or your client is a **conflict of interest**; if you must suggest changes, use the talk page and disclose the relationship rather than editing directly. Undisclosed promotional editing can lead to bans and bad press.',
+         '**Wikidata** is a structured database that feeds many systems. It also has notability and sourcing rules. Do not add unsupported claims. The honest route to being represented is to earn real coverage in independent sources, which also helps in searches generally.',
+         'Focus on what you control: accurate official profiles, clear About and press pages, structured data and an accessible media kit so journalists and editors can find correct facts. Let reputable coverage accumulate.'],
+        ['A client asks for a Wikipedia page. The agency reviews coverage, finds only company-written releases and two local mentions, and explains that the page would likely be deleted. It instead plans a research report and outreach to build independent coverage.'],
+        ['Read the notability guideline summary', 'List the independent sources that mention a brand you know', 'Write a client explanation of why direct editing is risky'],
+        ['Notability needs independent coverage', 'Disclose conflicts of interest and avoid direct edits', 'Build real coverage and accurate profiles']),
+      L('Digital PR for brand strength', 9,
+        ['Link PR to brand signals', 'Choose stories that build associations', 'Align PR with search goals'],
+        ['Digital PR builds the **associations** between a brand and its topics through coverage in trusted sources. Stories that repeatedly connect the brand with a subject (expert commentary, original data, community work) make it easier for people and systems to see the brand as relevant.',
+         'Plan themes rather than one-off stunts: choose two or three topics where the brand has real expertise, create assets such as research or guides, and offer experts to journalists. Keep messaging consistent so mentions reinforce each other, and prepare facts that are easy to quote.',
+         'Connect with search work: link to the best pages from coverage, use consistent naming, keep key pages accurate and measure branded search growth, referral traffic and links. PR that only counts mentions without business impact is hard to defend.'],
+        ['A payroll company focuses on one theme, "small business payroll mistakes", publishing a yearly study and offering expert quotes. After two years it is regularly cited in articles on the topic and branded searches for the company grow steadily.'],
+        ['Choose two themes for a brand and justify them', 'List three assets that support each theme', 'Define how you will measure impact'],
+        ['PR builds associations with topics', 'Consistency across stories compounds', 'Measure branded demand and links, not just mentions']),
+      L('Measuring brand: demand, sentiment and share of voice', 9,
+        ['Choose brand metrics', 'Track branded demand', 'Report honestly'],
+        ['Useful brand metrics include **branded search volume and clicks** (Search Console, filtered by brand terms), **direct and referral traffic**, **share of voice** against competitors for key topics, **review volume and rating**, **sentiment** of mentions and **assisted conversions** from brand-aware visitors. Pick a few that suit the client.',
+         'Be careful with attribution. Brand growth is slow and influenced by many things, so look at trends over quarters, compare to competitors and note events (campaigns, press, seasonality). Do not claim every rise as a result of your work, and do not ignore a decline.',
+         'A simple dashboard with branded clicks, review rating and count, share of voice and a note on major events gives a clear picture. Use it to set realistic goals, such as increasing branded clicks by 20 percent year over year or raising average rating from 4.2 to 4.5.'],
+        ['A quarterly report shows branded clicks up 18 percent, share of voice up from 12 to 17 percent in the category, and review rating up from 4.2 to 4.5, with a timeline of the PR campaign and a new product. The owner can see how things connect without overclaiming.'],
+        ['Filter Search Console to brand queries and chart a year', 'Define share of voice for three competitors', 'Draft a one-page brand dashboard'],
+        ['Use a handful of brand metrics', 'Look at trends and events, not single numbers', 'Set specific, realistic goals'])
+    ], [
+      Q('Why avoid editing a Wikipedia page about your own client?', ['It is a conflict of interest and may be reverted or lead to bans', 'It is always allowed because you know the brand best', 'It increases rankings when the page mentions your products', 'It is free advertising the community expects'], 0, 'Undisclosed promotional editing breaks community rules.'),
+      Q('What does notability require?', ['Significant coverage in reliable, independent sources', 'A large advertising budget in the same industry', 'Many followers on social media', 'A registered domain name for at least a year'], 0, 'Independent coverage demonstrates importance.'),
+      Q('Which is a good brand demand metric?', ['Branded search clicks over time', 'Page weight of the home page in kilobytes', 'The number of tags in the tag manager', 'Server uptime percentage only'], 0, 'Branded searches reflect awareness and interest.'),
+      Q('How should you treat brand growth in reports?', ['Show trends and events without overclaiming causes', 'Claim all growth as the result of your own work', 'Ignore any declines so the report stays positive', 'Report once every ten years'], 0, 'Brand effects are slow and multi-causal.'),
+      Q('Digital PR helps brand search mainly by:', ['Building consistent associations in trusted sources', 'Hiding competitors from the search results', 'Changing how Google\'s algorithms work', 'Reducing page speed so fewer people visit'], 0, 'Repeated, credible mentions link the brand to topics.')
+    ])
+  ]);
+})();

@@ -18,13 +18,16 @@
     'technical-seo': 3, 'link-building': 3, 'seo-for-ai-search': 3, 'advanced-ppc': 3, 'microsoft-ads-shopping-remarketing': 3, 'ecommerce-seo': 3, 'international-seo': 3,
     'client-management': 4, 'client-questions-answered': 4, 'ppc-account-management': 4, 'migrations-and-recovery': 4, 'ethics-privacy-compliance': 4,
     'seo-audits-and-strategy': 4, 'careers-and-freelancing': 4, 'capstone-mock-client': 4,
-    'ga4-and-tag-manager': 2, 'platform-seo': 2, 'beyond-search-channels': 3
+    'ga4-and-tag-manager': 2, 'platform-seo': 2, 'beyond-search-channels': 3,
+    'google-ads-specialist-topics': 3, 'automation-and-data-skills': 3, 'brand-serp-and-reputation': 3, 'images-video-discover-news': 3,
+    'industry-playbooks': 4, 'seo-strategy-and-development-teams': 4
   };
   QF.courseOrder = [
     'how-the-internet-works', 'marketing-math-basics', 'writing-for-the-web', 'seo-sem-toolbox', 'seo-fundamentals',
     'keyword-research', 'on-page-seo', 'platform-seo', 'google-ads-fundamentals', 'local-seo', 'content-strategy-eeat', 'seo-analytics', 'ga4-and-tag-manager', 'conversion-tracking-cro',
     'technical-seo', 'link-building', 'advanced-ppc', 'ecommerce-seo', 'international-seo', 'microsoft-ads-shopping-remarketing', 'beyond-search-channels', 'seo-for-ai-search',
-    'client-management', 'client-questions-answered', 'seo-audits-and-strategy', 'ppc-account-management', 'migrations-and-recovery', 'ethics-privacy-compliance', 'careers-and-freelancing', 'capstone-mock-client'
+    'google-ads-specialist-topics', 'automation-and-data-skills', 'brand-serp-and-reputation', 'images-video-discover-news',
+    'client-management', 'client-questions-answered', 'seo-audits-and-strategy', 'ppc-account-management', 'migrations-and-recovery', 'ethics-privacy-compliance', 'industry-playbooks', 'seo-strategy-and-development-teams', 'careers-and-freelancing', 'capstone-mock-client'
   ];
 
   QF.paths = [
@@ -33,7 +36,13 @@
       courses: ['how-the-internet-works', 'marketing-math-basics', 'writing-for-the-web', 'seo-sem-toolbox', 'seo-fundamentals', 'keyword-research', 'on-page-seo', 'google-ads-fundamentals', 'seo-analytics', 'client-questions-answered', 'client-management', 'careers-and-freelancing', 'capstone-mock-client'] },
     { id: 'client-ready', title: 'Client-Ready Pro', level: 'Intermediate to advanced', blurb: 'You know the craft. Now learn proposals, expectations, reporting, migrations, account management and compliance so nothing surprises you in front of a client.',
       outcome: 'You can run client accounts confidently, handle bad news, and protect yourself and the client.',
-      courses: ['client-management', 'client-questions-answered', 'seo-audits-and-strategy', 'ppc-account-management', 'migrations-and-recovery', 'ethics-privacy-compliance', 'capstone-mock-client'] },
+      courses: ['client-management', 'client-questions-answered', 'seo-audits-and-strategy', 'ppc-account-management', 'migrations-and-recovery', 'ethics-privacy-compliance', 'industry-playbooks', 'capstone-mock-client'] },
+    { id: 'technical-data', title: 'Technical & Data Specialist', level: 'Intermediate to advanced', blurb: 'For people who like systems: technical SEO, tracking, SQL, scripts, logs and the engineering process behind large sites.',
+      outcome: 'You can audit and fix complex sites, build your own reports and work with engineering teams as an equal.',
+      courses: ['technical-seo', 'ga4-and-tag-manager', 'automation-and-data-skills', 'images-video-discover-news', 'migrations-and-recovery', 'seo-strategy-and-development-teams'] },
+    { id: 'agency-owner', title: 'Agency & Freelance Owner', level: 'Intermediate to advanced', blurb: 'Run a practice: client skills, paid search operations, industry knowledge, reputation work and the business side.',
+      outcome: 'You can sell, deliver and retain clients across SEO and PPC with confidence.',
+      courses: ['client-management', 'client-questions-answered', 'google-ads-specialist-topics', 'ppc-account-management', 'industry-playbooks', 'brand-serp-and-reputation', 'careers-and-freelancing'] },
     { id: 'seo-specialist', title: 'SEO Specialist', level: 'Beginner to Intermediate', blurb: 'The core craft of organic search: how it works, what to target, how to optimize pages, and how to measure the result.',
       outcome: 'You can run an SEO program for a small or mid-size site end to end.',
       courses: ['seo-fundamentals', 'keyword-research', 'on-page-seo', 'platform-seo', 'seo-analytics', 'ga4-and-tag-manager', 'technical-seo', 'seo-audits-and-strategy'] },
@@ -45,7 +54,7 @@
       courses: ['seo-fundamentals', 'keyword-research', 'on-page-seo', 'technical-seo', 'content-strategy-eeat', 'link-building', 'seo-analytics', 'google-ads-fundamentals', 'conversion-tracking-cro', 'advanced-ppc', 'ecommerce-seo', 'international-seo', 'seo-for-ai-search'] },
     { id: 'local-growth', title: 'Local Growth Marketer', level: 'Beginner to Intermediate', blurb: 'For people marketing businesses with a physical presence: local SEO, reputation and the paid tools that fill the gaps.',
       outcome: 'You can put a local business on the map, literally, and measure the calls it earns.',
-      courses: ['seo-fundamentals', 'local-seo', 'on-page-seo', 'google-ads-fundamentals'] }
+      courses: ['seo-fundamentals', 'local-seo', 'on-page-seo', 'google-ads-fundamentals', 'google-ads-specialist-topics', 'brand-serp-and-reputation'] }
   ];
 
   /* more resources: checklists share the existing checklist engine */
