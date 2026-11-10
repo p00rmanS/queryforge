@@ -192,8 +192,34 @@
     ['Frequency (ads)', 'How many times the same person has seen your ad.', 'SEM'],
     ['SPF, DKIM and DMARC', 'Email authentication records that prove a message really comes from the domain it claims.', 'Both'],
     ['Allowable cost per lead', 'The most you can pay for a lead and still make a profit: value per customer times margin times close rate.', 'SEM'],
-    ['Case study', 'A short written story of a project: the situation, what you did, what you measured and what happened.', 'Both']
+    ['Case study', 'A short written story of a project: the situation, what you did, what you measured and what happened.', 'Both'],
+    ['Local Services Ads (LSA)', 'A Google ad format for local service businesses where you pay per valid lead (a call or message) instead of per click, shown with a verification badge.', 'SEM'],
+    ['Google Guaranteed', 'A badge shown on some Local Services Ads after a business passes Google\'s verification checks.', 'SEM'],
+    ['Lead form asset', 'A form that lets people submit their details directly from a Google ad without visiting your website.', 'SEM'],
+    ['Demand Gen', 'A Google Ads campaign type that shows visual ads on YouTube, Discover and Gmail to create interest among people who are not yet searching.', 'SEM'],
+    ['Customer Match', 'Uploading your own customer list (with permission) so ads can reach those people or similar audiences.', 'SEM'],
+    ['Manager account (MCC)', 'A Google Ads account that lets an agency view and manage many client accounts from one login.', 'SEM'],
+    ['Regex', 'Regular expression: a pattern language for matching text, used in filters in Search Console, GA4 and crawlers.', 'Both'],
+    ['XPath', 'A way to point at a specific element in a web page, used for custom extraction in crawlers.', 'SEO'],
+    ['BigQuery', 'Google\'s data warehouse where Search Console and GA4 data can be exported and queried with SQL.', 'Both'],
+    ['SQL', 'A language for asking questions of data tables: choose columns, filter rows, group and join them.', 'Both'],
+    ['Log file analysis', 'Studying server logs to see exactly which URLs search engine bots requested and how the server responded.', 'SEO'],
+    ['Brand SERP', 'The results page people see when they search for a brand\'s name.', 'SEO'],
+    ['Knowledge panel', 'An information box about a person, company or place shown in Google results, built from several sources.', 'SEO'],
+    ['Entity', 'A distinct thing search engines know about, such as a company, person, place or product, and how it relates to other things.', 'SEO'],
+    ['Google Discover', 'A personalized feed of content shown to people on mobile without them searching.', 'SEO'],
+    ['VideoObject', 'Structured data that describes a video (title, thumbnail, duration) so search engines can understand and show it.', 'SEO'],
+    ['Business case', 'A short argument for investing in a project: the problem, the opportunity, the plan, the cost, the expected return and the risks.', 'Both'],
+    ['OKR', 'Objectives and key results: a goal-setting method that pairs an objective with measurable results.', 'Both'],
+    ['Acceptance criteria', 'The testable conditions that show a ticket or task is done correctly.', 'Both'],
+    ['Programmatic SEO', 'Creating many pages from structured data and a template, which only works when each page has real, unique value.', 'SEO'],
+    ['Google Ad Grants', 'A program giving eligible nonprofits in-kind Google Search advertising under specific rules.', 'SEM']
   ].forEach(function (g) {
     if (!QF.glossary.some(function (x) { return x[0].toLowerCase() === g[0].toLowerCase(); })) QF.glossary.push(g);
   });
+
+  /* The full journey: every course, in learning order. */
+  QF.paths.unshift({ id: 'zero-to-hero', title: 'Zero to Hero', level: 'Complete beginner to senior practitioner', blurb: 'Every course on the platform in the order that makes sense: the web and math basics, the core SEO and paid search craft, specialist depth, then client work, strategy and a full practice project. Finish it and take the full practice exam.',
+    outcome: 'You can plan, run, report on and defend SEO and PPC work for real clients, and explain any of it in plain language.',
+    courses: QF.courseOrder.slice() });
 })();

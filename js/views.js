@@ -459,6 +459,7 @@
       '<section aria-labelledby="badge-h"><h2 id="badge-h">Badges</h2><ul class="badges">' + badges.map(function (b) {
         return '<li class="' + (b.got ? 'got' : '') + '"><span class="badge-i">' + (b.got ? icon('check') : icon('lock')) + '</span><b>' + esc(b.name) + '</b><small>' + esc(b.desc) + '</small><span class="sr-only">' + (b.got ? 'Earned' : 'Locked') + '</span></li>';
       }).join('') + '</ul></section>' +
+      '<section aria-labelledby="exam-h"><h2 id="exam-h">Practice exams</h2>' + (Object.keys(st.exams || {}).length ? '<ul class="plain-list">' + Object.keys(st.exams).map(function (k) { var m = examScopes().filter(function (x) { return x.id === k; })[0]; return m ? '<li><a href="#/exam?scope=' + k + '">' + esc(m.title) + '</a><span class="muted">Best ' + st.exams[k].best + '%' + (st.exams[k].best >= 70 ? ' · passed' : '') + '</span></li>' : ''; }).join('') + '</ul>' : '<p class="muted">Take a <a href="#/exam">practice exam</a> to find your weak spots.</p>') + '</section>' +
       '<section aria-labelledby="cert-h"><h2 id="cert-h">Certificates</h2>' + (certs.length ? '<ul class="plain-list">' + certs.map(function (c) { return '<li><a href="#/certificate/' + c.id + '">' + esc(c.title) + '</a><span class="muted">Completed</span></li>'; }).join('') + '</ul>' : '<p class="muted">Finish every lesson and pass every section quiz in a course to earn its certificate.</p>') + '</section>' +
       '<section aria-labelledby="bm-h"><h2 id="bm-h">Bookmarked lessons</h2>' + (bms.length ? '<ul class="plain-list">' + bms.map(function (k) {
         var x = QF.lessonIndex.filter(function (i) { return i.lesson.key === k; })[0]; if (!x) return '';
@@ -605,6 +606,77 @@
       }).join('') + '</ul></section>' : '') +
       (r.terms.length ? '<section><h2>Glossary</h2><dl class="hits-terms">' + r.terms.slice(0, 12).map(function (g) { return '<div><dt>' + esc(g[0]) + '</dt><dd>' + fmt(g[1]) + '</dd></div>'; }).join('') + '</dl><a class="link-arrow" href="#/glossary?q=' + encodeURIComponent(term) + '">Open in glossary ' + icon('arrow') + '</a></section>' : '') + '</div>';
     return { title: term ? 'Search: ' + term : 'Search', html: html, nav: '', page: 'search' };
+  });
+
+  /* ================= PRACTICE EXAM ================= */
+  var EXAM_PASS = 0.7;
+  function examScopes() {
+    var list = QF.stages.map(function (s) { return { id: 'stage' + s.n, title: 'Stage ' + s.n + ': ' + s.name, n: 20, blurb: s.blurb }; });
+    list.push({ id: 'all', title: 'Zero to Hero: everything', n: 40, blurb: 'A mixed exam across every course. The real test of whether it all stuck.' });
+    return list;
+  }
+  function examPool(scope) {
+    var pool = [];
+    QF.courses.forEach(function (c) {
+      var inScope = scope === 'all' || (scope.indexOf('stage') === 0 ? c.stage === +scope.slice(5) : c.id === scope);
+      if (!inScope) return;
+      c.sections.forEach(function (s) { s.quiz.forEach(function (q) { pool.push({ c: c, q: q }); }); });
+    });
+    return pool;
+  }
+  function shuffle(a) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function examPick(pool, n) {
+    var by = {}, order = [], out = [];
+    shuffle(pool.slice()).forEach(function (x) { if (!by[x.c.id]) { by[x.c.id] = []; order.push(x.c.id); } by[x.c.id].push(x); });
+    while (out.length < n && out.length < pool.length) order.forEach(function (id) { if (out.length < n && by[id].length) out.push(by[id].shift()); });
+    return shuffle(out);
+  }
+  QF.route(/^\/exam$/, function (_, q) {
+    var scope = q.scope || '', scopes = examScopes(), meta = scopes.filter(function (s) { return s.id === scope || (scope && s.id === scope); })[0];
+    var st = QF.state(); st.exams = st.exams || {};
+    if (!meta) {
+      var html = pageHead('Practice exams', 'Prove it stuck', 'Random questions drawn from the quizzes of every course in scope, balanced across courses. You need 70 percent to pass. After scoring you see which courses to review and why each answer you missed was wrong.') +
+        '<div class="wrap"><div class="grid grid-3 exam-grid">' + scopes.map(function (s) {
+          var r = st.exams[s.id];
+          return '<a class="res-card" href="#/exam?scope=' + s.id + '"><span class="pill">' + s.n + ' questions</span><h2>' + esc(s.title) + '</h2><p>' + esc(s.blurb) + '</p><span class="muted">' + (r ? 'Best: ' + r.best + '% ' + (r.best >= EXAM_PASS * 100 ? '(passed)' : '(not yet passed)') : 'Not attempted') + '</span><span class="link-arrow">Start ' + icon('arrow') + '</span></a>';
+        }).join('') + '</div></div>';
+      return { title: 'Practice exams', html: html, nav: 'exam', page: 'exam' };
+    }
+    var items = examPick(examPool(scope), meta.n);
+    var body = '<div class="wrap quiz-wrap">' + crumbs([['Practice exams', '#/exam'], [meta.title]]) + '<p class="eyebrow">' + items.length + ' questions</p><h1>' + esc(meta.title) + '</h1><p class="lede">Answer everything, then submit. You need ' + Math.round(EXAM_PASS * 100) + ' percent to pass. Questions are new each time.</p>' +
+      '<div id="exam-body"><form id="exam-form" novalidate>' + items.map(function (it, i) {
+        return '<fieldset class="q"><legend><span class="q-n">Question ' + (i + 1) + ' of ' + items.length + ' · ' + esc(it.c.title) + '</span>' + fmt(it.q.q) + '</legend>' +
+          it.q.opts.map(function (o, k) { return '<label class="opt"><input type="radio" name="e' + i + '" value="' + k + '"><span class="opt-l">' + 'ABCD'[k] + '</span><span>' + fmt(o) + '</span></label>'; }).join('') + '</fieldset>';
+      }).join('') + '<p class="form-error" id="exam-error" role="alert"></p><button class="btn btn-primary" type="submit">Submit exam</button></form></div></div>';
+    return {
+      title: meta.title, html: body, nav: 'exam', page: 'exam',
+      after: function () {
+        document.getElementById('exam-form').addEventListener('submit', function (e) {
+          e.preventDefault();
+          var ans = [], missing = 0;
+          items.forEach(function (it, i) { var r = document.querySelector('input[name="e' + i + '"]:checked'); if (r) ans.push(+r.value); else { ans.push(-1); missing++; } });
+          if (missing) { document.getElementById('exam-error').textContent = 'Please answer every question. ' + missing + ' left.'; return; }
+          var score = 0, per = {};
+          items.forEach(function (it, i) { var ok = ans[i] === it.q.ans; if (ok) score++; var p = per[it.c.id] = per[it.c.id] || { c: it.c, ok: 0, n: 0 }; p.n++; if (ok) p.ok++; });
+          var pct = Math.round(score / items.length * 100), pass = pct >= EXAM_PASS * 100, s2 = QF.state(); s2.exams = s2.exams || {};
+          if (!s2.exams[scope] || pct > s2.exams[scope].best) s2.exams[scope] = { best: pct, at: Date.now() };
+          QF.touchDay(); QF.save();
+          var weak = Object.keys(per).map(function (k) { return per[k]; }).sort(function (a, b) { return a.ok / a.n - b.ok / b.n; });
+          var wrong = items.map(function (it, i) { return { it: it, a: ans[i] }; }).filter(function (x) { return x.a !== x.it.q.ans; });
+          document.getElementById('exam-body').innerHTML =
+            '<div class="result ' + (pass ? 'pass' : 'fail') + '" tabindex="-1"><p class="score"><b>' + pct + '</b><span>%</span></p><div><h2>' + (pass ? 'Passed' : 'Not yet') + '</h2><p>' + score + ' of ' + items.length + ' correct. ' + (pass ? 'Good work. Try the next stage or the full exam.' : 'Review the courses below, then retake. Questions change each time.') + '</p></div></div>' +
+            '<h2>Review by course</h2><ul class="plain-list">' + weak.map(function (p) {
+              return '<li><a href="#/course/' + p.c.id + '">' + esc(p.c.title) + '</a><span class="muted">' + p.ok + ' of ' + p.n + (p.ok < p.n ? ' · review' : ' · solid') + '</span></li>';
+            }).join('') + '</ul>' +
+            (wrong.length ? '<h2>What you missed</h2><ol class="review-list">' + wrong.map(function (x) {
+              return '<li class="bad"><p class="rq">' + fmt(x.it.q.q) + '</p><p>Your answer: <b>' + fmt(x.it.q.opts[x.a]) + '</b></p><p>Correct answer: <b>' + fmt(x.it.q.opts[x.it.q.ans]) + '</b></p><p class="why"><b>Why:</b> ' + fmt(x.it.q.why) + '</p><p><a href="#/course/' + x.it.c.id + '">Review ' + esc(x.it.c.title) + '</a></p></li>';
+            }).join('') + '</ol>' : '<p class="note">Perfect. Nothing to review.</p>') +
+            '<div class="actions"><a class="btn btn-primary" href="#/exam?scope=' + scope + '" data-action="retake-exam">Retake with new questions</a><a class="btn btn-ghost" href="#/exam">All exams</a></div>';
+          QF.announce('Exam scored ' + pct + ' percent. ' + (pass ? 'Passed.' : 'Not passed.'));
+          var rs = document.querySelector('.result'); if (rs) rs.focus();
+        });
+      }
+    };
   });
 
   V.notFound = function () {

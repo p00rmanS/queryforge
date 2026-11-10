@@ -1,6 +1,6 @@
 # Queryforge
 
-A static, no-build learning platform for SEO and SEM, from "what is a website" to running real client accounts. 30 courses in four stages, 331 lessons, 515 quiz questions, a 132-term glossary, 6 guided paths and 8 resources (checklists, a keyword template and a client jargon translator).
+A static, no-build learning platform for SEO and SEM, from "what is a website" to running real client accounts. 36 courses in four stages, 397 lessons, 625 quiz questions, a 153-term glossary, 9 guided paths (including Zero to Hero, all 36 courses in order), practice exams and 8 resources (checklists, a keyword template and a client jargon translator).
 
 Live site: https://p00rmans.github.io/queryforge/
 

@@ -94,6 +94,7 @@
         document.getElementById('video-msg').textContent = 'Demo build: no video file is included. The full lesson is written below.';
         t.blur(); break;
       case 'retake': refresh(); window.scrollTo(0, 0); break;
+      case 'retake-exam': e.preventDefault(); QF.dispatch(); window.scrollTo(0, 0); break;
       case 'print': window.print(); break;
       case 'signin': openAuth(function () { refresh(); }); break;
       case 'signout': s.user = null; QF.save(); updateUserLink(); refresh(); toast('Signed out'); break;
