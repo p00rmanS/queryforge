@@ -40,7 +40,7 @@ Each section needs 3-6 lessons and a 5-question quiz. Answer options are shuffle
 
 ## Go deeper sections
 
-Advanced material lives in `js/data/deep-*.js` as `QF.deep['course-slug|section|lesson'] = [paragraphs]`. When present, the lesson shows an expandable "Go deeper" block (163 lessons have one: every SEO and SEM core course; the beginner, client and compliance courses do not yet).
+Advanced material lives in `js/data/deep-*.js` as `QF.deep['course-slug|section|lesson'] = [paragraphs]`. When present, the lesson shows an expandable "Go deeper" block (208 lessons have one: every SEO and SEM core course plus all four beginner courses; the client and compliance courses do not yet).
 
 ## Notes
 
